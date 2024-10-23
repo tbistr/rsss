@@ -1,0 +1,14 @@
+{
+    "name": "Node.js & TypeScript",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "biomejs.biome"
+            ]
+        }
+    },
+    "remoteUser": "node"
+}
