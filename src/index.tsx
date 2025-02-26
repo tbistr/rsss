@@ -2,13 +2,7 @@ import { Hono } from "hono";
 import { renderToString } from "react-dom/server";
 import { api } from "./api";
 
-type Env = {
-	Bindings: {
-		MY_VAR: string;
-	};
-};
-
-const app = new Hono<Env>();
+const app = new Hono();
 
 app.route("/api", api);
 

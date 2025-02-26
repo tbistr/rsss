@@ -1,13 +1,17 @@
+import { hc } from "hono/client";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
+import type { AppType } from "./api";
+
+const client = hc<AppType>("/api");
 
 function App() {
 	return (
 		<>
 			<h1>Hello, Hono with React!</h1>
-			<h2>Example of useState()</h2>
+			<h2>Example of useState</h2>
 			<Counter />
-			<h2>Example of API fetch()</h2>
+			<h2>Example of API fetch</h2>
 			<ClockButton />
 		</>
 	);
@@ -26,19 +30,9 @@ const ClockButton = () => {
 	const [response, setResponse] = useState<string | null>(null);
 
 	const handleClick = async () => {
-		const response = await fetch("/api/clock");
-		const data = await response.json();
-		const headers = Array.from(response.headers.entries()).reduce(
-			(acc, [key, value]) => ({ ...acc, [key]: value }),
-			{},
-		);
-		const fullResponse = {
-			url: response.url,
-			status: response.status,
-			headers,
-			body: data,
-		};
-		setResponse(JSON.stringify(fullResponse, null, 2));
+		const res = await client.clock.$get();
+		const data = res.ok ? (await res.json()).time : "Error fetching time";
+		setResponse(data);
 	};
 
 	return (

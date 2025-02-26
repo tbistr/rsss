@@ -1,25 +1,25 @@
 {
-  "name": "rsss",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build --mode client && vite build",
-    "preview": "wrangler dev server-build/index.js",
-    "deploy": "$npm_execpath run build && wrangler deploy server-build/index.js"
-  },
-  "dependencies": {
-    "hono": "^4.6.12",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@cloudflare/workers-types": "^4.20241112.0",
-    "@hono/vite-build": "^1.1.0",
-    "@hono/vite-dev-server": "^0.17.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "vite": "^6.0.1",
-    "wrangler": "^3.88.0"
-  }
+	"name": "rsss",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build --mode client && vite build",
+		"preview": "wrangler dev dist/index.js",
+		"deploy": "$npm_execpath run build && wrangler deploy dist/index.js"
+	},
+	"dependencies": {
+		"hono": "^4.6.12",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@cloudflare/workers-types": "^4.20241112.0",
+		"@hono/vite-build": "^1.1.0",
+		"@hono/vite-dev-server": "^0.17.0",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
+		"vite": "^6.0.1",
+		"wrangler": "^3.88.0"
+	}
 }
