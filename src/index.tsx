@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { renderToString } from "react-dom/server";
-import { api } from "./api";
+import { api } from "/server/note";
 
 const app = new Hono();
 
