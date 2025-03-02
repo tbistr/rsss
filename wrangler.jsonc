@@ -1,17 +1,17 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "react-spa-test",
-	"main": "src/index.ts",
+	"name": "rsss",
+	"main": "src/index.tsx",
 	"compatibility_date": "2025-02-27",
-	"assets": { "directory": "./dist" },
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "D1_NAME",
-			"database_id": "D1_ID",
-			"migrations_dir": "drizzle"
-		}
-	]
+	"assets": { "directory": "./dist" }
+	// "d1_databases": [
+	// 	{
+	// 		"binding": "DB",
+	// 		"database_name": "D1_NAME",
+	// 		"database_id": "D1_ID",
+	// 		"migrations_dir": "drizzle"
+	// 	}
+	// ]
 	// "compatibility_flags": [
 	//   "nodejs_compat"
 	// ],
