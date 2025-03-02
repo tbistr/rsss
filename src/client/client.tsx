@@ -1,32 +1,32 @@
 import { hc } from "hono/client";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import type { AppType } from "../server/note";
-import type { Note } from "../server/note";
+import type { AppType } from "src/server";
+import type { Feed } from "src/server/feeds";
 
 const client = hc<AppType>("/api");
 
 function App() {
 	return (
 		<>
-			<h1>Note App</h1>
+			<h1>Feed App</h1>
 
-			<h2>Create Note</h2>
-			<CreateNote />
+			<h2>Create Feed</h2>
+			<CreateFeed />
 
-			<h2>Show Notes</h2>
-			<ShowNotes />
+			<h2>Show Feeds</h2>
+			<ShowFeeds />
 
-			<h2>Show Note</h2>
-			<ShowNote />
+			<h2>Show Feed</h2>
+			<ShowFeed />
 
-			<h2>Delete Note</h2>
-			<DeleteNote />
+			<h2>Delete Feed</h2>
+			<DeleteFeed />
 		</>
 	);
 }
 
-const CreateNote = () => {
+const CreateFeed = () => {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 	return (
@@ -34,7 +34,7 @@ const CreateNote = () => {
 			onSubmit={async (e) => {
 				e.preventDefault();
 				(
-					await client.notes.$post({
+					await client.feeds.$post({
 						form: {
 							title: title,
 							content: content,
@@ -64,19 +64,19 @@ const CreateNote = () => {
 	);
 };
 
-const ShowNotes = () => {
-	const [note, setNote] = useState<Note[]>([]);
+const ShowFeeds = () => {
+	const [Feed, setFeed] = useState<Feed[]>([]);
 	const onClick = async () => {
-		const res = await (await client.notes.$get()).json();
-		setNote(res);
+		const res = await (await client.feeds.$get()).json();
+		setFeed(res);
 	};
 	return (
 		<>
 			<button type="button" onClick={onClick}>
-				Show Note IDs
+				Show Feed IDs
 			</button>
 			<ul>
-				{note.map((n) => (
+				{Feed.map((n) => (
 					<li key={n.id}>{JSON.stringify(n)}</li>
 				))}
 			</ul>
@@ -84,22 +84,18 @@ const ShowNotes = () => {
 	);
 };
 
-const ShowNote = () => {
+const ShowFeed = () => {
 	const [id, setId] = useState("");
-	const [note, setNote] = useState<Note | undefined>(undefined);
+	const [Feed, setFeed] = useState<Feed | undefined>(undefined);
 	return (
 		<form
 			onSubmit={async (e) => {
 				e.preventDefault();
-				const res = await client.notes[":id"].$get({
+				const res = await client.feeds[":id"].$get({
 					param: { id },
 				});
-				if (res.status === 404) {
-					const data = await res.json();
-					setNote(undefined);
-					return;
-				}
-				setNote(await res.json());
+				const data = await res.json();
+				setFeed(data);
 			}}
 		>
 			<label>
@@ -111,18 +107,18 @@ const ShowNote = () => {
 				/>
 			</label>
 			<button type="submit">Show</button>
-			{note && <pre>{JSON.stringify(note, null, 2)}</pre>}
+			{Feed && <pre>{JSON.stringify(Feed, null, 2)}</pre>}
 		</form>
 	);
 };
 
-const DeleteNote = () => {
+const DeleteFeed = () => {
 	const [id, setId] = useState("");
 	return (
 		<form
 			onSubmit={async (e) => {
 				e.preventDefault();
-				await client.notes[":id"].$delete({
+				await client.feeds[":id"].$delete({
 					param: { id },
 				});
 			}}

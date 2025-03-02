@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { renderToString } from "react-dom/server";
-import { api } from "/server/note";
+import api from "src/server";
 
 const app = new Hono();
 
@@ -18,9 +18,9 @@ app.get("*", (c) => {
 						href="https://cdn.simplecss.org/simple.min.css"
 					/>
 					{import.meta.env.PROD ? (
-						<script type="module" src="/static/client.js" />
+						<script type="module" src="/static/client/client.js" />
 					) : (
-						<script type="module" src="/src/client.tsx" />
+						<script type="module" src="/src/client/client.tsx" />
 					)}
 				</head>
 				<body>
