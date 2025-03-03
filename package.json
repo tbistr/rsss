@@ -7,8 +7,8 @@
 		"preview": "wrangler dev dist/index.js",
 		"deploy": "$npm_execpath run build && wrangler deploy dist/index.js",
 		"db:migrate:generate": "drizzle-kit generate",
-		"db:migrate:local": "wrangler d1 migrations apply [D1_NAME] --local",
-		"db:migrate:remote": "wrangler d1 migrations apply [D1_NAME] --remote",
+		"db:migrate:local": "wrangler d1 migrations apply rsss-d1 --local",
+		"db:migrate:remote": "wrangler d1 migrations apply rsss-d1 --remote",
 		"lint": "biome check --write"
 	},
 	"dependencies": {
