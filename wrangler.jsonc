@@ -8,7 +8,7 @@
 		{
 			"binding": "DB",
 			"database_name": "rsss-d1",
-			"database_id": "5a3ba430-f042-4b4e-9d4f-1ba33dbd6f05",
+			"database_id": "e5ebe11b-bbd1-490d-a271-87951f15bbd7",
 			"migrations_dir": "drizzle"
 		}
 	]
