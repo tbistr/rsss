@@ -1,8 +1,10 @@
 import { hc } from "hono/client";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router";
 import type { AppType } from "src/server";
 import type { Feed } from "src/server/feeds";
+
 
 const client = hc<AppType>("/api");
 
@@ -144,4 +146,10 @@ const DeleteFeed = () => {
 };
 
 const root = createRoot(document.getElementById("root") ?? document.body);
-root.render(<App />);
+root.render(
+	<BrowserRouter>
+		<Routes>
+      <Route index element={<App />} />
+    </Routes>
+	</BrowserRouter>
+);

@@ -16,7 +16,8 @@
 		"drizzle-orm": "^0.40.0",
 		"hono": "^4.7.2",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react-dom": "^19.0.0",
+		"react-router": "^7.3.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
