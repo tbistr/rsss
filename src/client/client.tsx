@@ -1,10 +1,11 @@
+import { type ThemeConfig, UIProvider, extendConfig } from "@yamada-ui/react";
 import { hc } from "hono/client";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import type { AppType } from "src/server";
 import type { Feed } from "src/server/feeds";
-
+import RSSReader from "./pages/home";
 
 const client = hc<AppType>("/api");
 
@@ -145,11 +146,18 @@ const DeleteFeed = () => {
 	);
 };
 
+const config: ThemeConfig = {
+	breakpoint: { direction: "up", identifier: "@media screen" },
+};
+
 const root = createRoot(document.getElementById("root") ?? document.body);
 root.render(
-	<BrowserRouter>
-		<Routes>
-      <Route index element={<App />} />
-    </Routes>
-	</BrowserRouter>
+	<UIProvider config={config}>
+		<BrowserRouter>
+			<Routes>
+				<Route index element={<App />} />
+				<Route path="home" element={<RSSReader />} />
+			</Routes>
+		</BrowserRouter>
+	</UIProvider>,
 );

@@ -13,10 +13,10 @@ app.get("*", (c) => {
 				<head>
 					<meta charSet="utf-8" />
 					<meta content="width=device-width, initial-scale=1" name="viewport" />
-					<link
+					{/* <link
 						rel="stylesheet"
 						href="https://cdn.simplecss.org/simple.min.css"
-					/>
+					/> */}
 					{import.meta.env.PROD ? (
 						<script type="module" src="/static/client.js" />
 					) : (
