@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "5a3ba430-f042-4b4e-9d4f-1ba33dbd6f05",
+  "id": "e5ebe11b-bbd1-490d-a271-87951f15bbd7",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "feeds": {
@@ -34,7 +34,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": 1740927060
+          "default": "(unixepoch())"
         }
       },
       "indexes": {},

@@ -3,15 +3,15 @@
 	"name": "rsss",
 	"main": "src/index.tsx",
 	"compatibility_date": "2025-02-27",
-	"assets": { "directory": "./dist" }
-	// "d1_databases": [
-	// 	{
-	// 		"binding": "DB",
-	// 		"database_name": "D1_NAME",
-	// 		"database_id": "D1_ID",
-	// 		"migrations_dir": "drizzle"
-	// 	}
-	// ]
+	"assets": { "directory": "./dist" },
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "rsss-d1",
+			"database_id": "e5ebe11b-bbd1-490d-a271-87951f15bbd7",
+			"migrations_dir": "drizzle"
+		}
+	]
 	// "compatibility_flags": [
 	//   "nodejs_compat"
 	// ],

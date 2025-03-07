@@ -28,7 +28,7 @@ function App() {
 
 const CreateFeed = () => {
 	const [title, setTitle] = useState("");
-	const [content, setContent] = useState("");
+	const [url, setUrl] = useState("");
 	return (
 		<form
 			onSubmit={async (e) => {
@@ -37,7 +37,7 @@ const CreateFeed = () => {
 					await client.feeds.$post({
 						form: {
 							title: title,
-							content: content,
+							url: url,
 						},
 					})
 				).url;
@@ -52,11 +52,11 @@ const CreateFeed = () => {
 				/>
 			</label>
 			<label>
-				Content:
+				Feed URL:
 				<input
 					type="text"
-					value={content}
-					onChange={(e) => setContent(e.target.value)}
+					value={url}
+					onChange={(e) => setUrl(e.target.value)}
 				/>
 			</label>
 			<button type="submit">Create</button>
@@ -67,8 +67,12 @@ const CreateFeed = () => {
 const ShowFeeds = () => {
 	const [Feed, setFeed] = useState<Feed[]>([]);
 	const onClick = async () => {
-		const res = await (await client.feeds.$get()).json();
-		setFeed(res);
+		const res = await client.feeds.$get();
+		if (!res.ok) {
+			setFeed([]);
+			return;
+		}
+		setFeed(await res.json());
 	};
 	return (
 		<>
@@ -94,8 +98,11 @@ const ShowFeed = () => {
 				const res = await client.feeds[":id"].$get({
 					param: { id },
 				});
-				const data = await res.json();
-				setFeed(data);
+				if (!res.ok) {
+					setFeed(undefined);
+					return;
+				}
+				setFeed(await res.json());
 			}}
 		>
 			<label>
