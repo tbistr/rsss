@@ -1,0 +1,665 @@
+{
+  "version": "2.0",
+  "channel": {
+    "title": "Zennのトレンド",
+    "description": "現在Zennでトレンドとなっている投稿のRSSフィードです",
+    "link": "https://zenn.dev",
+    "image": {
+      "url": "https://static.zenn.studio/images/logo-only-dark.png",
+      "title": "Zennのトレンド",
+      "link": "https://zenn.dev"
+    },
+    "generator": "zenn.dev",
+    "lastBuildDate": "Sat, 08 Mar 2025 12:23:43 GMT",
+    "atom:link": {
+      "@_href": "https://zenn.dev/feed",
+      "@_rel": "self",
+      "@_type": "application/rss+xml"
+    },
+    "language": "ja",
+    "item": [
+      {
+        "title": "CursorのProject Rules運用のベストプラクティスを探る",
+        "description": "こんにちは、しば田です！\nこの記事では自分がProject Rulesをどのように運用しているかを書いていきます。\n設定ではなく運用という表現が近いです。\n注意事項\n\n以下に語る運用が正解かは分からないです。1つの参考程度にお読みください。\n\nCursorのアップデートでこの記事は一瞬で陳腐化する可能性があります。ご了承ください。\n\n\n TL;DR\nまずは結論から。現時点での僕の考えるベスプラは以下です。\n\n日々アップデートして育てる\n育てやすい構成にしておく\n複数のmdファイルの中身を結合するスクリプトを作ってmdcファイルを生成する\nmdcファイルの参照ルール（Auto Attach...",
+        "link": "https://zenn.dev/ks0318/articles/b8eb2c9396f9cb",
+        "guid": {
+          "#text": "https://zenn.dev/ks0318/articles/b8eb2c9396f9cb",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Sat, 08 Mar 2025 03:58:36 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--uooJUFe7--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Cursor%25E3%2581%25AEProject%2520Rules%25E9%2581%258B%25E7%2594%25A8%25E3%2581%25AE%25E3%2583%2599%25E3%2582%25B9%25E3%2583%2588%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25AF%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9%25E3%2582%2592%25E6%258E%25A2%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%2597%25E3%2581%25B0%25E7%2594%25B0%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2RhOGZkMjA2OTcuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "しば田"
+      },
+      {
+        "title": "MCPで広がるLLM　~Clineでの動作原理~",
+        "description": "この記事『Clineに全部賭ける前に　〜Clineの動作原理を深掘り〜』では、Clineの内部構造について解説しました。今回は、その中でも最近、特に注目されている機能の一つ、MCPについての概要、ならびにCline内部での実装方法について詳しく掘り下げていきます。\n\n そもそもMCPとは\nMCP（Model Context Protocol）はClineやCursorなどといった、LLMを使用しているクライアントがMCPサーバーと連携するためのプロトコルです。広義的に、MCPとはそのプロトコルを使用したサービスのことを指します。\n\nMCPサーバーとはクラウド上のサービスやローカルで立ち上...",
+        "link": "https://zenn.dev/codeciao/articles/cline-mcp-server-overview",
+        "guid": {
+          "#text": "https://zenn.dev/codeciao/articles/cline-mcp-server-overview",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 23:30:09 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s---PjnsxHy--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:MCP%25E3%2581%25A7%25E5%25BA%2583%25E3%2581%258C%25E3%2582%258BLLM%25E3%2580%2580%7ECline%25E3%2581%25A7%25E3%2581%25AE%25E5%258B%2595%25E4%25BD%259C%25E5%258E%259F%25E7%2590%2586%7E%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:Daiki0613%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzlkNWI1NzhlNWUuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/g_south_west%2Ch_34%2Cl_default:og-publication-pro-mark-xcosax%2Cw_34%2Cx_217%2Cy_158/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:codeciao%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_255%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2E5NmZmOTMwODMuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Daiki0613"
+      },
+      {
+        "title": "データベースの楽観ロックと悲観ロックを理解する",
+        "description": "\n はじめに\n現代のアプリケーション開発において、複数のユーザーが同時にデータにアクセスする状況は日常的です。ショッピングサイトで同じ商品を複数の顧客が同時に注文したり、チケット予約システムで同じ座席を複数の人が確保しようとしたりする場面を想像してみてください。このような状況で、データの整合性を保ちながら効率的に処理を行うことは重要な課題です。\n本記事では、データベースにおける並行制御の基本概念から、トランザクションの性質、そして楽観ロックと悲観ロックという二つの主要なロック戦略について解説します。これらの知識は、スケーラブルで信頼性の高いアプリケーションを構築する上で不可欠です。\nこの...",
+        "link": "https://zenn.dev/farstep/articles/optimistic-and-pessimistic-locking-in-database",
+        "guid": {
+          "#text": "https://zenn.dev/farstep/articles/optimistic-and-pessimistic-locking-in-database",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 22:15:16 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s---USELQvB--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%2587%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B9%25E3%2581%25AE%25E6%25A5%25BD%25E8%25A6%25B3%25E3%2583%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2581%25A8%25E6%2582%25B2%25E8%25A6%25B3%25E3%2583%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2582%2592%25E7%2590%2586%25E8%25A7%25A3%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:FarStep%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzI1NDRiZmJiZGQuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "FarStep"
+      },
+      {
+        "title": "Python組み込み関数 100本ノック",
+        "description": "本書はただ読むだけではなく、実際に手を動かして学びたい人のための一冊です。Pythonには組み込み関数が豊富にあり、2024年12月時点で71個ありますが、本書で全て学ぶことができます。\n\n・基礎の勉強が終わったので、中級者に向けて組み込み関数を学びたい\n・Pythonのコードをより簡潔に書きたい\n・リファレンス（辞書）として持っておきたい\n\nそんな方は是非ご活用ください。",
+        "link": "https://zenn.dev/python_academia/books/94b58e7ef9fe42",
+        "guid": {
+          "#text": "https://zenn.dev/python_academia/books/94b58e7ef9fe42",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 22:12:08 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--2doF-f7t--/g_center%2Ch_280%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYm9va19jb3Zlci85YmFhZjQ2ZGU2LmpwZWc=%2Cw_200/v1627283836/default/og-base-book_yz4z02.jpg",
+          "@_length": "0",
+          "@_type": "image/jpeg"
+        },
+        "dc:creator": "Pythonアカデミア"
+      },
+      {
+        "title": "Mistral AIのOCR機能使ってみた",
+        "description": "こんにちは、酒井です！\n株式会社 EGGHEAD（エッグヘッド）という「製造業で生成 AI を活用したシステム開発」をしている会社の代表をしております。\nhttps://egghead.co.jp?utm_source=zenn&amp;utm_medium=social&amp;utm_campaign=normal\n今回は X で話題になっていたMistral AIのOCR機能について手元で動かしてみたのでその内容をシェアしたいと思います。\nhttps://x.com/0317_hiroya/status/1897780187149775315\n\n TL;DR\n\n\nMistral A...",
+        "link": "https://zenn.dev/egghead/articles/5e103707dcabe1",
+        "guid": {
+          "#text": "https://zenn.dev/egghead/articles/5e103707dcabe1",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 13:55:17 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--1BPc0BIG--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Mistral%2520AI%25E3%2581%25AEOCR%25E6%25A9%259F%25E8%2583%25BD%25E4%25BD%25BF%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:%25E9%2585%2592%25E4%25BA%2595%2520%25E9%25A7%25BF%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzUzZTA1NDE5ZDYuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:EGGHEAD%2520%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzUyNTdkZjlhZjkuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "酒井 駿"
+      },
+      {
+        "title": "React Router v7 SPA Mode でクライアントミドルウェアを使ってみた",
+        "description": "React Router v7.3.0 で導入された「クライアントミドルウェア」機能を使って認証ガードをリファクタリングしてみました。この記事では、Firebase 認証を使った SPA アプリ「しずかな Remix SPA Example」での実際の使用例をもとに解説します。\n\n TL;DR\n\nReact Router v7.3.0 から unstable_clientMiddleware がサポートされました（リリースノート）\nミドルウェアを使うと、各ルートに散らばっていた認証チェックを一箇所にまとめられます\nコンテキストを使ってユーザー情報を共有できるので、ルートローダーでの重複し...",
+        "link": "https://zenn.dev/coji/articles/react-router-v7-client-middleware",
+        "guid": {
+          "#text": "https://zenn.dev/coji/articles/react-router-v7-client-middleware",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 12:41:23 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--PiDHINCk--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:React%2520Router%2520v7%2520SPA%2520Mode%2520%25E3%2581%25A7%25E3%2582%25AF%25E3%2583%25A9%25E3%2582%25A4%25E3%2582%25A2%25E3%2583%25B3%25E3%2583%2588%25E3%2583%259F%25E3%2583%2589%25E3%2583%25AB%25E3%2582%25A6%25E3%2582%25A7%25E3%2582%25A2%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Coji%2520Mizoguchi%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2pWY2RrNjcwV2NIdGs0anBHa2FGTDAxcERVUVlIX0JYdWE5aDRVNVE9czI1MC1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Coji Mizoguchi"
+      },
+      {
+        "title": "Mastra入門 〜AIエージェント開発ツールの概要と使い方〜",
+        "description": "\n Mastraとは\nMastra（マストラ）は、AIエージェント開発のためのオープンソースフレームワークです。TypeScript（JavaScript）で実装され、大規模言語モデル（LLM）を活用したAIアプリケーションや機能を効率的に構築できます。\n\n例えば、対話型の「エージェント」（自律的にタスクを実行するAIシステム）をシンプルなコードで実装でき、ローカル環境やクラウド上で動作させることが可能です。\n\n 主な特徴\nMastraでは、エージェントにツールやワークフローなどの機能を組み込むことで、言語モデルに外部の操作能力を与えることができます。エージェントはユーザーからの指示に応...",
+        "link": "https://zenn.dev/yosh1/articles/mastra-ai-agent-framework-guide",
+        "guid": {
+          "#text": "https://zenn.dev/yosh1/articles/mastra-ai-agent-framework-guide",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 08:41:01 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--uL-URXVe--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Mastra%25E5%2585%25A5%25E9%2596%2580%2520%25E3%2580%259CAI%25E3%2582%25A8%25E3%2583%25BC%25E3%2582%25B8%25E3%2582%25A7%25E3%2583%25B3%25E3%2583%2588%25E9%2596%258B%25E7%2599%25BA%25E3%2583%2584%25E3%2583%25BC%25E3%2583%25AB%25E3%2581%25AE%25E6%25A6%2582%25E8%25A6%2581%25E3%2581%25A8%25E4%25BD%25BF%25E3%2581%2584%25E6%2596%25B9%25E3%2580%259C%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:yosh1%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzhiNGVjNjdhZTkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "yosh1"
+      },
+      {
+        "title": "端末プラグインの歴史と新世代の端末プラグイン ddt.vim",
+        "description": "\n 始めに\ndpp.vim の開発が一通り終了し、次に作成するプラグインについて検討しました。\n私は過去作成したプラグインをどんどんリメイクしているのですが、端末プラグインもそろそろリメイクする時ではないかと思いました。\nそしてddt.vim の開発が開始したのです。今回は現在開発中のプラグインである ddt.vim について解説します。\nhttps://github.com/Shougo/ddt.vim\n\n 端末プラグインの必要性\nそもそも、なぜ Vim からコマンドを実行する必要があるのでしょうか。\nVim からコマンドを実行するのは長らく邪道と思われていました。:help desi...",
+        "link": "https://zenn.dev/shougo/articles/ddt-vim-beta",
+        "guid": {
+          "#text": "https://zenn.dev/shougo/articles/ddt-vim-beta",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 08:11:20 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--xrUa6o7E--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E7%25AB%25AF%25E6%259C%25AB%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0%25E3%2582%25A4%25E3%2583%25B3%25E3%2581%25AE%25E6%25AD%25B4%25E5%258F%25B2%25E3%2581%25A8%25E6%2596%25B0%25E4%25B8%2596%25E4%25BB%25A3%25E3%2581%25AE%25E7%25AB%25AF%25E6%259C%25AB%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0%25E3%2582%25A4%25E3%2583%25B3%2520ddt.vim%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Shougo%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2llTXlqT3huMG12REN6SFFNMWZNeGlYd3Z4dmw5cVk1ZzVBN2lWPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Shougo"
+      },
+      {
+        "title": "Lynxを動かす：新世代クロスプラットフォーム開発ツールの第一印象",
+        "description": "先日ByteDanceから新しいReactベースのマルチプラットフォーム開発ツールのLynxが発表されました。\nhttps://lynxjs.org/\n仕組み的にも思いっきりReact Nativeとの競合になりそうですが、何はともあれ動かしてみないと何もわからないので、サンプルプロジェクトを動かしてみた備忘録と気になったことを調べたログをまとめました。\n\n Quick startを試す\nadditional toolsのインストールでbiomeが選択肢に出てきてモダンだと思いました。\n❯ bun create rspeedy@latest\n\n◆  Create Rspeedy Proj...",
+        "link": "https://zenn.dev/woodstock_tech/articles/739fc1cb3b1ac5",
+        "guid": {
+          "#text": "https://zenn.dev/woodstock_tech/articles/739fc1cb3b1ac5",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 03:02:29 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--9jIrEjpR--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Lynx%25E3%2582%2592%25E5%258B%2595%25E3%2581%258B%25E3%2581%2599%25EF%25BC%259A%25E6%2596%25B0%25E4%25B8%2596%25E4%25BB%25A3%25E3%2582%25AF%25E3%2583%25AD%25E3%2582%25B9%25E3%2583%2597%25E3%2583%25A9%25E3%2583%2583%25E3%2583%2588%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0%25E9%2596%258B%25E7%2599%25BA%25E3%2583%2584%25E3%2583%25BC%25E3%2583%25AB%25E3%2581%25AE%25E7%25AC%25AC%25E4%25B8%2580%25E5%258D%25B0%25E8%25B1%25A1%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:Takeshi%2520Tsukamoto%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2E5MTQzNDllZDIuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:woodstock.club%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2NmMDM0ODM0YzMuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Takeshi Tsukamoto"
+      },
+      {
+        "title": "ローカル・リモートお好きにどうぞな、HRBrainのマイクロサービス開発環境",
+        "description": "\n はじめに\nこんにちは！HRBrainでエンジニアをしている鈴木（善）です。\nみなさん、開発環境はどのように整えていますか？\nHRBrainでは、エンジニアが自由に使え、壊しても問題のない開発環境を用意しています。\n以前は各自のPC上で環境を立ち上げていましたが、PCのリソースを圧迫する問題が無視できなくなり、リモートマシン上でも開発できるように改善しました。運用を始めて1年ほど経ち、課題はあるものの、安定した運用ができています。\n本記事では以下について紹介します！\n\n開発環境の概要\nなぜ、どのように構築したのか\nそこから得られた知見\n\nざっくりまとめると次のような内容です。\n\nローカ...",
+        "link": "https://zenn.dev/bellwood4486/articles/workstations",
+        "guid": {
+          "#text": "https://zenn.dev/bellwood4486/articles/workstations",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 01:41:45 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--F9_UI5nT--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%25AD%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25AB%25E3%2583%25BB%25E3%2583%25AA%25E3%2583%25A2%25E3%2583%25BC%25E3%2583%2588%25E3%2581%258A%25E5%25A5%25BD%25E3%2581%258D%25E3%2581%25AB%25E3%2581%25A9%25E3%2581%2586%25E3%2581%259E%25E3%2581%25AA%25E3%2580%2581HRBrain%25E3%2581%25AE%25E3%2583%259E%25E3%2582%25A4%25E3%2582%25AF%25E3%2583%25AD%25E3%2582%25B5%25E3%2583%25BC%25E3%2583%2593%25E3%2582%25B9%25E9%2596%258B%25E7%2599%25BA%25E7%2592%25B0%25E5%25A2%2583%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Yoshiharu%2520Suzuki%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2liX0doV2prZ1Bxemg5akgyOUlGc0RhNzBrell4RndtTTJXTHhqLXdFPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Yoshiharu Suzuki"
+      },
+      {
+        "title": "AI駆動開発で苦労した話 〜笑えないけど笑うしかない日々〜",
+        "description": "\n AI駆動開発で苦労した話 〜笑えないけど笑うしかない日々〜\n\n はじめに\n※本記事で使用している画像はAIツール（DALL-E）を使用して生成したものです。\n\n 略歴と、SecureNaviにおけるAI駆動開発の導入の経緯\n2002年にお茶の水のジュンク堂でXP本に出合い強烈な衝撃を受けました。2005年にはSeleniumに出合いさらに大きな衝撃を受けました。\n以降、テストの自動化、コードやテストの自動生成をライフワークとしてエンジニア人生を送っているしがないエンジニアです。\n前々職の富士通時代は、頑固な職人的なエンジニアの理想である「ダース・ベイダー」(ピープルウエアで有名の受け...",
+        "link": "https://zenn.dev/securenavi_tech/articles/4bce0b5b25441f",
+        "guid": {
+          "#text": "https://zenn.dev/securenavi_tech/articles/4bce0b5b25441f",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 00:14:41 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--ec0JNDZU--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:AI%25E9%25A7%2586%25E5%258B%2595%25E9%2596%258B%25E7%2599%25BA%25E3%2581%25A7%25E8%258B%25A6%25E5%258A%25B4%25E3%2581%2597%25E3%2581%259F%25E8%25A9%25B1%2520%25E3%2580%259C%25E7%25AC%2591%25E3%2581%2588%25E3%2581%25AA%25E3%2581%2584%25E3%2581%2591%25E3%2581%25A9%25E7%25AC%2591%25E3%2581%2586%25E3%2581%2597%25E3%2581%258B%25E3%2581%25AA%25E3%2581%2584%25E6%2597%25A5%25E3%2580%2585%25E3%2580%259C%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:KAWANO%2520Fumihiko%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzlhZWVjZTdmZWEuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:SecureNavi%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRkYzU4MDEwYzEuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "KAWANO Fumihiko"
+      },
+      {
+        "title": "僕のElectronアプリアーキテクチャ",
+        "description": "\n はじめに\n最近、趣味でElectronを使ったアプリを開発しています。その過程で、アーキテクチャ設計についていくつか悩んだポイントがありました。本記事では、実際に採用したアーキテクチャや解決策を紹介します。\n今回はサーバーにデータを置かないローカルファーストなデスクトップアプリを作っているということもあり、特に以下の点で悩みました。\n\nフレームワークどうする？\nWebのようなREST APIが使えない\nデータベースどうしよう\nアプリのアップデートどうしよう\nアプリのコード署名むずい\n\n\n フレームワークどうする\nまずはじめにフレームワークをどうするかという問題がありました。\n最初はN...",
+        "link": "https://zenn.dev/progate/articles/building-electron-app",
+        "guid": {
+          "#text": "https://zenn.dev/progate/articles/building-electron-app",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 00:13:05 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--FlUqA9qo--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E5%2583%2595%25E3%2581%25AEElectron%25E3%2582%25A2%25E3%2583%2597%25E3%2583%25AA%25E3%2582%25A2%25E3%2583%25BC%25E3%2582%25AD%25E3%2583%2586%25E3%2582%25AF%25E3%2583%2581%25E3%2583%25A3%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:Godai%2520Hori%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2UzOTZjNjhlM2MuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:Progate%2520Tech%2520Blog%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzU2MzlkZTY4MGYuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Godai Hori"
+      },
+      {
+        "title": "JetBrains IDEとClaude Codeを連携させて擬似Clineにする",
+        "description": "ClineはVSCode拡張なので、IntelliJやWebStormなどのJetBrains製品のエディタには対応していません。\nJetBrains版のエージェントとも言えるJunieの登場も控えていますが、他のユーザーのレビューによると他ツールと同じ開発体験を実現するのは難しそうでしたClaude 3.7 Sonnetをモデルに指定して使うことは出来なさそうでした。コーディングタスク能力にかなり差があるのでClaudeを使いたいところです。[1]\nそこでCLI（TUI）ベースのコーディングエージェントのClaude Codeの出番です。\nhttps://docs.anthropic....",
+        "link": "https://zenn.dev/laiso/articles/def184d432438b",
+        "guid": {
+          "#text": "https://zenn.dev/laiso/articles/def184d432438b",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 17:15:15 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--lTWbQpvL--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:JetBrains%2520IDE%25E3%2581%25A8Claude%2520Code%25E3%2582%2592%25E9%2580%25A3%25E6%2590%25BA%25E3%2581%2595%25E3%2581%259B%25E3%2581%25A6%25E6%2593%25AC%25E4%25BC%25BCCline%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:laiso%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzM4Nzc0MDcyMDcuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "laiso"
+      },
+      {
+        "title": "ハッカソンに出たはずが長期チーム開発をしてる話",
+        "description": "\n こんにちは\n先日、2/26 ~ 2/28の3日間で「PR TIMES HACKATHON 2025 WINTER」に参加させていただきました。 僕自身、人生初ハッカソン&amp;チーム開発でしたがかなり濃い経験を得ることができました。今回、タイトルにある通りハッカソンレポートにするつもりでしたが、なぜか今でも開発が続いてるので....\nこのようなタイトルにさせて頂きました！\nそれではよろしくお願いします。\n\n PR TIMES HACKTHON　とは\nPR TIMESさんが毎年夏、冬で実施する3日間のハッカソンです。チームを3,4人程度で組んで、与えられたお題に合わせて成果物を作って...",
+        "link": "https://zenn.dev/cercil/articles/e11a7488891f59",
+        "guid": {
+          "#text": "https://zenn.dev/cercil/articles/e11a7488891f59",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 13:06:50 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--czwwzGFh--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%258F%25E3%2583%2583%25E3%2582%25AB%25E3%2582%25BD%25E3%2583%25B3%25E3%2581%25AB%25E5%2587%25BA%25E3%2581%259F%25E3%2581%25AF%25E3%2581%259A%25E3%2581%258C%25E9%2595%25B7%25E6%259C%259F%25E3%2583%2581%25E3%2583%25BC%25E3%2583%25A0%25E9%2596%258B%25E7%2599%25BA%25E3%2582%2592%25E3%2581%2597%25E3%2581%25A6%25E3%2582%258B%25E8%25A9%25B1%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%2591%25E3%2581%2584%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSXo0d1JnUnlFazhnYzllc1RlLUhfLXBxd1g3V3VOSUZTbHVpTXpsdU54MHVod2tET3o9czk2LWM=%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "けい"
+      },
+      {
+        "title": "Cline の Plan Mode を使って手戻りを防ごう！",
+        "description": "\n TL;DR\n\n\nPlan Modeを活用しよう: Plan Mode を使って要件を固めて手戻りを防ぐ\n\nCline はタスクランナー: Cline は自然言語スクリプトを実行するタスクランナーとして捉えると分かりやすい。Plan Mode は dry-run の役割\n\n\n はじめに\nここ最近話題になっている Cline ですが、触れた方の中には「これはパラダイムが変わる」と感じた人も多いのではないでしょうか。\n私も2024年11月中頃に初めて Cline を使い、その新しい体験と馬力の高さに驚きました。\nしかし、いざ Cline を使ってみると、Cline に実装を任せても意図通り...",
+        "link": "https://zenn.dev/heavenosk/articles/cline-plan-mode",
+        "guid": {
+          "#text": "https://zenn.dev/heavenosk/articles/cline-plan-mode",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 11:07:19 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--RTQsoOtX--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Cline%2520%25E3%2581%25AE%2520Plan%2520Mode%2520%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%25A3%25E3%2581%25A6%25E6%2589%258B%25E6%2588%25BB%25E3%2582%258A%25E3%2582%2592%25E9%2598%25B2%25E3%2581%2594%25E3%2581%2586%25EF%25BC%2581%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%25B8%25E3%2581%25B6%25E3%2582%2593%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2hoMWZIZ0JrazVrQ3N2c2dQYS10azVkMG0yTk02ZHBDM3BBWXdKPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "へぶん"
+      },
+      {
+        "title": "次世代クロスプラットフォームフレームワーク「Lynx」 ファーストインプレッション",
+        "description": "こんにちは！テラーノベルでiOS/Android/Webとフロントエンド周りを担当している @kazutoyoです！\nByteDanceが、モバイル/Web向けのクロスプラットフォームの新たなフレームワーク、「Lynx」を公開しました。\nhttps://lynxjs.org/blog/lynx-unlock-native-for-more.html\n普段iOS/AndroidのネイティブやReact Native、Next.jsなどで開発している筆者が、Lynxを触ってみた感想を書いてみます。\n\n Lynxのファーストインプレッション\n\n 良い部分\n\n1つのコードでiOS/Android...",
+        "link": "https://zenn.dev/tellernovel_inc/articles/3c2bece10afb3f",
+        "guid": {
+          "#text": "https://zenn.dev/tellernovel_inc/articles/3c2bece10afb3f",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 10:25:58 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--2XApd--m--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E6%25AC%25A1%25E4%25B8%2596%25E4%25BB%25A3%25E3%2582%25AF%25E3%2583%25AD%25E3%2582%25B9%25E3%2583%2597%25E3%2583%25A9%25E3%2583%2583%25E3%2583%2588%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0%25E3%2583%2595%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%25A0%25E3%2583%25AF%25E3%2583%25BC%25E3%2582%25AF%25E3%2580%258CLynx%25E3%2580%258D%2520%25E3%2583%2595%25E3%2582%25A1%25E3%2583%25BC%25E3%2582%25B9%25E3%2583%2588%25E3%2582%25A4%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:kazutoyo%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2Y2ZDBjOWE0YTEuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E3%2583%2586%25E3%2583%25A9%25E3%2583%25BC%25E3%2583%258E%25E3%2583%2599%25E3%2583%25AB%2520%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzQ0OTFkZTE3MjUuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "kazutoyo"
+      },
+      {
+        "title": "”開発チームと監視の心理的距離”を近くするためのSentryとLogging運用例",
+        "description": "マナリンクCTOの名人です。\n今回は、SentryとLoggingの工夫により、「開発チームとエラー監視の心理的距離を近くする」ことをテーマに記事を書きます。\n\n 背景\nエラー監視、嫌ですよね。\n手塩にかけて育てたソースコードが本番環境でエラーを吐いている様子は、誰が見ても気持ちいいものではありません。\nそんなエラー監視から目を逸らさず、普段の開発から意識して関わっていくことが、サービスの安定した運用や障害対応のスピードに繋がります。\n弊社では昨年1年ほどかけて、コツコツとSentryとの関わり方や、日頃どんな基準でどんな形式でどこにLoggingするか、およびSentryとLoggin...",
+        "link": "https://zenn.dev/manalink_dev/articles/sentry-team-integration",
+        "guid": {
+          "#text": "https://zenn.dev/manalink_dev/articles/sentry-team-integration",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 10:00:23 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--LK4pFCAk--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E2%2580%259D%25E9%2596%258B%25E7%2599%25BA%25E3%2583%2581%25E3%2583%25BC%25E3%2583%25A0%25E3%2581%25A8%25E7%259B%25A3%25E8%25A6%2596%25E3%2581%25AE%25E5%25BF%2583%25E7%2590%2586%25E7%259A%2584%25E8%25B7%259D%25E9%259B%25A2%25E2%2580%259D%25E3%2582%2592%25E8%25BF%2591%25E3%2581%258F%25E3%2581%2599%25E3%2582%258B%25E3%2581%259F%25E3%2582%2581%25E3%2581%25AESentry%25E3%2581%25A8Logging%25E9%2581%258B%25E7%2594%25A8%25E4%25BE%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:meijin%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2FmZjliMGZlZjIuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E3%2583%259E%25E3%2583%258A%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%2520Tech%2520Blog%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2pPWmtyWk1nS3djRXl5a2w1X2lVTFZFVmtVVUpkNzkzcjlfejhERjRzPXMyNTAtYw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "meijin"
+      },
+      {
+        "title": "Dockerイメージの安全性を高める10のセキュリティハック",
+        "description": "\n はじめに\n本記事は、Snykの『10 Docker Image Security Best Practices』という記事を参考にし、学習の一環としてまとめたものです。\n記事の内容をより分かりやすく整理し、個人的な考察や追加情報も加えています。\n読者の皆様の学習の一助となれば幸いです。\nhttps://snyk.io/jp/blog/10-docker-image-security-best-practices/\n\n Dockerのセキュリティとは\nSnykの記事では、Dockerのセキュリティとは、Dockerコンテナのビルド、ランタイム、オーケストレーションに関する側面として説明...",
+        "link": "https://zenn.dev/fuuji/articles/3909c8d444eaa9",
+        "guid": {
+          "#text": "https://zenn.dev/fuuji/articles/3909c8d444eaa9",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Wed, 05 Mar 2025 14:35:00 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--YlWSyChk--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Docker%25E3%2582%25A4%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%25AE%2589%25E5%2585%25A8%25E6%2580%25A7%25E3%2582%2592%25E9%25AB%2598%25E3%2582%2581%25E3%2582%258B10%25E3%2581%25AE%25E3%2582%25BB%25E3%2582%25AD%25E3%2583%25A5%25E3%2583%25AA%25E3%2583%2586%25E3%2582%25A3%25E3%2583%258F%25E3%2583%2583%25E3%2582%25AF%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Fuji%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRhYTQ2NzZjNDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Fuji"
+      },
+      {
+        "title": "GitHub Copilotがプルリクを勝手にレビューしてくれる設定を広めたい",
+        "description": "\n はじめに\n最近GitHubでプルリクのレビューアーにCopilotくんをアサインすると、AIがレビューしてくれるようになりました。\n\nアサインしてしばらく待つとレビューを付けてくれます。\n\n今回はCopilotくんの指摘はなかったようです。\nさて、この機能は非常に便利なのですが、毎回アサインするの面倒くさいですしプルリクを出す人によってはアサインしなかったり忘れたりするのはイマイチなので、勝手にアサインして毎回レビューしてもらう設定にしちゃいましょう。という記事です。\nGitHub Copilotは定額なのでなるべく使いまくったほうが得ですよね！\n\n 結論を簡単に書くと\nルールセット...",
+        "link": "https://zenn.dev/ncdc/articles/7807f5b6e3ee88",
+        "guid": {
+          "#text": "https://zenn.dev/ncdc/articles/7807f5b6e3ee88",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Wed, 05 Mar 2025 10:30:18 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--EOtRq-z1--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:GitHub%2520Copilot%25E3%2581%258C%25E3%2583%2597%25E3%2583%25AB%25E3%2583%25AA%25E3%2582%25AF%25E3%2582%2592%25E5%258B%259D%25E6%2589%258B%25E3%2581%25AB%25E3%2583%25AC%25E3%2583%2593%25E3%2583%25A5%25E3%2583%25BC%25E3%2581%2597%25E3%2581%25A6%25E3%2581%258F%25E3%2582%258C%25E3%2582%258B%25E8%25A8%25AD%25E5%25AE%259A%25E3%2582%2592%25E5%25BA%2583%25E3%2582%2581%25E3%2581%259F%25E3%2581%2584%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:%25E3%2581%2584%25E3%2581%25B0%25E3%2582%2589%25E3%2581%258D%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzNhODZhNDA5ZDMuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/g_south_west%2Ch_34%2Cl_default:og-publication-pro-mark-xcosax%2Cw_34%2Cx_217%2Cy_158/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:NCDC%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B8%25E3%2583%258B%25E3%2582%25A2%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_255%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2lXRjZXeUJCMTBrRDZNaV9Fa0tLQi13WFJSUC04eFlJbDV5eWljPXM5Ni1j%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "いばらき"
+      },
+      {
+        "title": "Claude Codeで感じたAIとソフトウェア開発の未来",
+        "description": "先週、2月24日[1]にClaude Codeのresearch preview版がリリースされました。↓の動画では、Claude Codeによる次のような作業の様子が紹介されており、エキサイティングです。\n\nリポジトリの内容を理解して説明させる\n追加機能を要求して実装させる\nビルドおよびテストが通るまで試行錯誤させる\n\nhttps://www.youtube.com/watch?v=AJpK3YTTKZ4\n週末に時間が取れたので、早速Claude Codeを触ってみました。その結果、\n\nソフトウェア開発の方法が大きく変わりそう\nAIエージェントを前提に自分が変わらなければならない\n\nと...",
+        "link": "https://zenn.dev/koher/articles/claude-code-and-development-future",
+        "guid": {
+          "#text": "https://zenn.dev/koher/articles/claude-code-and-development-future",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Wed, 05 Mar 2025 03:26:30 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--mheChJ3U--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%25E3%2581%25A7%25E6%2584%259F%25E3%2581%2598%25E3%2581%259FAI%25E3%2581%25A8%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2582%25A6%25E3%2582%25A7%25E3%2582%25A2%25E9%2596%258B%25E7%2599%25BA%25E3%2581%25AE%25E6%259C%25AA%25E6%259D%25A5%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Yuta%2520Koshizawa%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzZkMjYwYmRkNzguanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Yuta Koshizawa"
+      }
+    ],
+    "items": [
+      {
+        "title": "CursorのProject Rules運用のベストプラクティスを探る",
+        "description": "こんにちは、しば田です！\nこの記事では自分がProject Rulesをどのように運用しているかを書いていきます。\n設定ではなく運用という表現が近いです。\n注意事項\n\n以下に語る運用が正解かは分からないです。1つの参考程度にお読みください。\n\nCursorのアップデートでこの記事は一瞬で陳腐化する可能性があります。ご了承ください。\n\n\n TL;DR\nまずは結論から。現時点での僕の考えるベスプラは以下です。\n\n日々アップデートして育てる\n育てやすい構成にしておく\n複数のmdファイルの中身を結合するスクリプトを作ってmdcファイルを生成する\nmdcファイルの参照ルール（Auto Attach...",
+        "link": "https://zenn.dev/ks0318/articles/b8eb2c9396f9cb",
+        "guid": {
+          "#text": "https://zenn.dev/ks0318/articles/b8eb2c9396f9cb",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Sat, 08 Mar 2025 03:58:36 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--uooJUFe7--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Cursor%25E3%2581%25AEProject%2520Rules%25E9%2581%258B%25E7%2594%25A8%25E3%2581%25AE%25E3%2583%2599%25E3%2582%25B9%25E3%2583%2588%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25AF%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9%25E3%2582%2592%25E6%258E%25A2%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%2597%25E3%2581%25B0%25E7%2594%25B0%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2RhOGZkMjA2OTcuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "しば田"
+      },
+      {
+        "title": "MCPで広がるLLM　~Clineでの動作原理~",
+        "description": "この記事『Clineに全部賭ける前に　〜Clineの動作原理を深掘り〜』では、Clineの内部構造について解説しました。今回は、その中でも最近、特に注目されている機能の一つ、MCPについての概要、ならびにCline内部での実装方法について詳しく掘り下げていきます。\n\n そもそもMCPとは\nMCP（Model Context Protocol）はClineやCursorなどといった、LLMを使用しているクライアントがMCPサーバーと連携するためのプロトコルです。広義的に、MCPとはそのプロトコルを使用したサービスのことを指します。\n\nMCPサーバーとはクラウド上のサービスやローカルで立ち上...",
+        "link": "https://zenn.dev/codeciao/articles/cline-mcp-server-overview",
+        "guid": {
+          "#text": "https://zenn.dev/codeciao/articles/cline-mcp-server-overview",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 23:30:09 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s---PjnsxHy--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:MCP%25E3%2581%25A7%25E5%25BA%2583%25E3%2581%258C%25E3%2582%258BLLM%25E3%2580%2580%7ECline%25E3%2581%25A7%25E3%2581%25AE%25E5%258B%2595%25E4%25BD%259C%25E5%258E%259F%25E7%2590%2586%7E%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:Daiki0613%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzlkNWI1NzhlNWUuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/g_south_west%2Ch_34%2Cl_default:og-publication-pro-mark-xcosax%2Cw_34%2Cx_217%2Cy_158/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:codeciao%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_255%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2E5NmZmOTMwODMuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Daiki0613"
+      },
+      {
+        "title": "データベースの楽観ロックと悲観ロックを理解する",
+        "description": "\n はじめに\n現代のアプリケーション開発において、複数のユーザーが同時にデータにアクセスする状況は日常的です。ショッピングサイトで同じ商品を複数の顧客が同時に注文したり、チケット予約システムで同じ座席を複数の人が確保しようとしたりする場面を想像してみてください。このような状況で、データの整合性を保ちながら効率的に処理を行うことは重要な課題です。\n本記事では、データベースにおける並行制御の基本概念から、トランザクションの性質、そして楽観ロックと悲観ロックという二つの主要なロック戦略について解説します。これらの知識は、スケーラブルで信頼性の高いアプリケーションを構築する上で不可欠です。\nこの...",
+        "link": "https://zenn.dev/farstep/articles/optimistic-and-pessimistic-locking-in-database",
+        "guid": {
+          "#text": "https://zenn.dev/farstep/articles/optimistic-and-pessimistic-locking-in-database",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 22:15:16 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s---USELQvB--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%2587%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B9%25E3%2581%25AE%25E6%25A5%25BD%25E8%25A6%25B3%25E3%2583%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2581%25A8%25E6%2582%25B2%25E8%25A6%25B3%25E3%2583%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2582%2592%25E7%2590%2586%25E8%25A7%25A3%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:FarStep%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzI1NDRiZmJiZGQuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "FarStep"
+      },
+      {
+        "title": "Python組み込み関数 100本ノック",
+        "description": "本書はただ読むだけではなく、実際に手を動かして学びたい人のための一冊です。Pythonには組み込み関数が豊富にあり、2024年12月時点で71個ありますが、本書で全て学ぶことができます。\n\n・基礎の勉強が終わったので、中級者に向けて組み込み関数を学びたい\n・Pythonのコードをより簡潔に書きたい\n・リファレンス（辞書）として持っておきたい\n\nそんな方は是非ご活用ください。",
+        "link": "https://zenn.dev/python_academia/books/94b58e7ef9fe42",
+        "guid": {
+          "#text": "https://zenn.dev/python_academia/books/94b58e7ef9fe42",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 22:12:08 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--2doF-f7t--/g_center%2Ch_280%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYm9va19jb3Zlci85YmFhZjQ2ZGU2LmpwZWc=%2Cw_200/v1627283836/default/og-base-book_yz4z02.jpg",
+          "@_length": "0",
+          "@_type": "image/jpeg"
+        },
+        "dc:creator": "Pythonアカデミア"
+      },
+      {
+        "title": "Mistral AIのOCR機能使ってみた",
+        "description": "こんにちは、酒井です！\n株式会社 EGGHEAD（エッグヘッド）という「製造業で生成 AI を活用したシステム開発」をしている会社の代表をしております。\nhttps://egghead.co.jp?utm_source=zenn&amp;utm_medium=social&amp;utm_campaign=normal\n今回は X で話題になっていたMistral AIのOCR機能について手元で動かしてみたのでその内容をシェアしたいと思います。\nhttps://x.com/0317_hiroya/status/1897780187149775315\n\n TL;DR\n\n\nMistral A...",
+        "link": "https://zenn.dev/egghead/articles/5e103707dcabe1",
+        "guid": {
+          "#text": "https://zenn.dev/egghead/articles/5e103707dcabe1",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 13:55:17 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--1BPc0BIG--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Mistral%2520AI%25E3%2581%25AEOCR%25E6%25A9%259F%25E8%2583%25BD%25E4%25BD%25BF%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:%25E9%2585%2592%25E4%25BA%2595%2520%25E9%25A7%25BF%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzUzZTA1NDE5ZDYuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:EGGHEAD%2520%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzUyNTdkZjlhZjkuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "酒井 駿"
+      },
+      {
+        "title": "React Router v7 SPA Mode でクライアントミドルウェアを使ってみた",
+        "description": "React Router v7.3.0 で導入された「クライアントミドルウェア」機能を使って認証ガードをリファクタリングしてみました。この記事では、Firebase 認証を使った SPA アプリ「しずかな Remix SPA Example」での実際の使用例をもとに解説します。\n\n TL;DR\n\nReact Router v7.3.0 から unstable_clientMiddleware がサポートされました（リリースノート）\nミドルウェアを使うと、各ルートに散らばっていた認証チェックを一箇所にまとめられます\nコンテキストを使ってユーザー情報を共有できるので、ルートローダーでの重複し...",
+        "link": "https://zenn.dev/coji/articles/react-router-v7-client-middleware",
+        "guid": {
+          "#text": "https://zenn.dev/coji/articles/react-router-v7-client-middleware",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 12:41:23 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--PiDHINCk--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:React%2520Router%2520v7%2520SPA%2520Mode%2520%25E3%2581%25A7%25E3%2582%25AF%25E3%2583%25A9%25E3%2582%25A4%25E3%2582%25A2%25E3%2583%25B3%25E3%2583%2588%25E3%2583%259F%25E3%2583%2589%25E3%2583%25AB%25E3%2582%25A6%25E3%2582%25A7%25E3%2582%25A2%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Coji%2520Mizoguchi%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2pWY2RrNjcwV2NIdGs0anBHa2FGTDAxcERVUVlIX0JYdWE5aDRVNVE9czI1MC1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Coji Mizoguchi"
+      },
+      {
+        "title": "Mastra入門 〜AIエージェント開発ツールの概要と使い方〜",
+        "description": "\n Mastraとは\nMastra（マストラ）は、AIエージェント開発のためのオープンソースフレームワークです。TypeScript（JavaScript）で実装され、大規模言語モデル（LLM）を活用したAIアプリケーションや機能を効率的に構築できます。\n\n例えば、対話型の「エージェント」（自律的にタスクを実行するAIシステム）をシンプルなコードで実装でき、ローカル環境やクラウド上で動作させることが可能です。\n\n 主な特徴\nMastraでは、エージェントにツールやワークフローなどの機能を組み込むことで、言語モデルに外部の操作能力を与えることができます。エージェントはユーザーからの指示に応...",
+        "link": "https://zenn.dev/yosh1/articles/mastra-ai-agent-framework-guide",
+        "guid": {
+          "#text": "https://zenn.dev/yosh1/articles/mastra-ai-agent-framework-guide",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 08:41:01 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--uL-URXVe--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Mastra%25E5%2585%25A5%25E9%2596%2580%2520%25E3%2580%259CAI%25E3%2582%25A8%25E3%2583%25BC%25E3%2582%25B8%25E3%2582%25A7%25E3%2583%25B3%25E3%2583%2588%25E9%2596%258B%25E7%2599%25BA%25E3%2583%2584%25E3%2583%25BC%25E3%2583%25AB%25E3%2581%25AE%25E6%25A6%2582%25E8%25A6%2581%25E3%2581%25A8%25E4%25BD%25BF%25E3%2581%2584%25E6%2596%25B9%25E3%2580%259C%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:yosh1%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzhiNGVjNjdhZTkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "yosh1"
+      },
+      {
+        "title": "端末プラグインの歴史と新世代の端末プラグイン ddt.vim",
+        "description": "\n 始めに\ndpp.vim の開発が一通り終了し、次に作成するプラグインについて検討しました。\n私は過去作成したプラグインをどんどんリメイクしているのですが、端末プラグインもそろそろリメイクする時ではないかと思いました。\nそしてddt.vim の開発が開始したのです。今回は現在開発中のプラグインである ddt.vim について解説します。\nhttps://github.com/Shougo/ddt.vim\n\n 端末プラグインの必要性\nそもそも、なぜ Vim からコマンドを実行する必要があるのでしょうか。\nVim からコマンドを実行するのは長らく邪道と思われていました。:help desi...",
+        "link": "https://zenn.dev/shougo/articles/ddt-vim-beta",
+        "guid": {
+          "#text": "https://zenn.dev/shougo/articles/ddt-vim-beta",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 08:11:20 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--xrUa6o7E--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E7%25AB%25AF%25E6%259C%25AB%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0%25E3%2582%25A4%25E3%2583%25B3%25E3%2581%25AE%25E6%25AD%25B4%25E5%258F%25B2%25E3%2581%25A8%25E6%2596%25B0%25E4%25B8%2596%25E4%25BB%25A3%25E3%2581%25AE%25E7%25AB%25AF%25E6%259C%25AB%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0%25E3%2582%25A4%25E3%2583%25B3%2520ddt.vim%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Shougo%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2llTXlqT3huMG12REN6SFFNMWZNeGlYd3Z4dmw5cVk1ZzVBN2lWPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Shougo"
+      },
+      {
+        "title": "Lynxを動かす：新世代クロスプラットフォーム開発ツールの第一印象",
+        "description": "先日ByteDanceから新しいReactベースのマルチプラットフォーム開発ツールのLynxが発表されました。\nhttps://lynxjs.org/\n仕組み的にも思いっきりReact Nativeとの競合になりそうですが、何はともあれ動かしてみないと何もわからないので、サンプルプロジェクトを動かしてみた備忘録と気になったことを調べたログをまとめました。\n\n Quick startを試す\nadditional toolsのインストールでbiomeが選択肢に出てきてモダンだと思いました。\n❯ bun create rspeedy@latest\n\n◆  Create Rspeedy Proj...",
+        "link": "https://zenn.dev/woodstock_tech/articles/739fc1cb3b1ac5",
+        "guid": {
+          "#text": "https://zenn.dev/woodstock_tech/articles/739fc1cb3b1ac5",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 03:02:29 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--9jIrEjpR--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Lynx%25E3%2582%2592%25E5%258B%2595%25E3%2581%258B%25E3%2581%2599%25EF%25BC%259A%25E6%2596%25B0%25E4%25B8%2596%25E4%25BB%25A3%25E3%2582%25AF%25E3%2583%25AD%25E3%2582%25B9%25E3%2583%2597%25E3%2583%25A9%25E3%2583%2583%25E3%2583%2588%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0%25E9%2596%258B%25E7%2599%25BA%25E3%2583%2584%25E3%2583%25BC%25E3%2583%25AB%25E3%2581%25AE%25E7%25AC%25AC%25E4%25B8%2580%25E5%258D%25B0%25E8%25B1%25A1%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:Takeshi%2520Tsukamoto%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2E5MTQzNDllZDIuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:woodstock.club%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2NmMDM0ODM0YzMuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Takeshi Tsukamoto"
+      },
+      {
+        "title": "ローカル・リモートお好きにどうぞな、HRBrainのマイクロサービス開発環境",
+        "description": "\n はじめに\nこんにちは！HRBrainでエンジニアをしている鈴木（善）です。\nみなさん、開発環境はどのように整えていますか？\nHRBrainでは、エンジニアが自由に使え、壊しても問題のない開発環境を用意しています。\n以前は各自のPC上で環境を立ち上げていましたが、PCのリソースを圧迫する問題が無視できなくなり、リモートマシン上でも開発できるように改善しました。運用を始めて1年ほど経ち、課題はあるものの、安定した運用ができています。\n本記事では以下について紹介します！\n\n開発環境の概要\nなぜ、どのように構築したのか\nそこから得られた知見\n\nざっくりまとめると次のような内容です。\n\nローカ...",
+        "link": "https://zenn.dev/bellwood4486/articles/workstations",
+        "guid": {
+          "#text": "https://zenn.dev/bellwood4486/articles/workstations",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 01:41:45 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--F9_UI5nT--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%25AD%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25AB%25E3%2583%25BB%25E3%2583%25AA%25E3%2583%25A2%25E3%2583%25BC%25E3%2583%2588%25E3%2581%258A%25E5%25A5%25BD%25E3%2581%258D%25E3%2581%25AB%25E3%2581%25A9%25E3%2581%2586%25E3%2581%259E%25E3%2581%25AA%25E3%2580%2581HRBrain%25E3%2581%25AE%25E3%2583%259E%25E3%2582%25A4%25E3%2582%25AF%25E3%2583%25AD%25E3%2582%25B5%25E3%2583%25BC%25E3%2583%2593%25E3%2582%25B9%25E9%2596%258B%25E7%2599%25BA%25E7%2592%25B0%25E5%25A2%2583%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Yoshiharu%2520Suzuki%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2liX0doV2prZ1Bxemg5akgyOUlGc0RhNzBrell4RndtTTJXTHhqLXdFPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Yoshiharu Suzuki"
+      },
+      {
+        "title": "AI駆動開発で苦労した話 〜笑えないけど笑うしかない日々〜",
+        "description": "\n AI駆動開発で苦労した話 〜笑えないけど笑うしかない日々〜\n\n はじめに\n※本記事で使用している画像はAIツール（DALL-E）を使用して生成したものです。\n\n 略歴と、SecureNaviにおけるAI駆動開発の導入の経緯\n2002年にお茶の水のジュンク堂でXP本に出合い強烈な衝撃を受けました。2005年にはSeleniumに出合いさらに大きな衝撃を受けました。\n以降、テストの自動化、コードやテストの自動生成をライフワークとしてエンジニア人生を送っているしがないエンジニアです。\n前々職の富士通時代は、頑固な職人的なエンジニアの理想である「ダース・ベイダー」(ピープルウエアで有名の受け...",
+        "link": "https://zenn.dev/securenavi_tech/articles/4bce0b5b25441f",
+        "guid": {
+          "#text": "https://zenn.dev/securenavi_tech/articles/4bce0b5b25441f",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 00:14:41 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--ec0JNDZU--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:AI%25E9%25A7%2586%25E5%258B%2595%25E9%2596%258B%25E7%2599%25BA%25E3%2581%25A7%25E8%258B%25A6%25E5%258A%25B4%25E3%2581%2597%25E3%2581%259F%25E8%25A9%25B1%2520%25E3%2580%259C%25E7%25AC%2591%25E3%2581%2588%25E3%2581%25AA%25E3%2581%2584%25E3%2581%2591%25E3%2581%25A9%25E7%25AC%2591%25E3%2581%2586%25E3%2581%2597%25E3%2581%258B%25E3%2581%25AA%25E3%2581%2584%25E6%2597%25A5%25E3%2580%2585%25E3%2580%259C%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:KAWANO%2520Fumihiko%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzlhZWVjZTdmZWEuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:SecureNavi%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRkYzU4MDEwYzEuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "KAWANO Fumihiko"
+      },
+      {
+        "title": "僕のElectronアプリアーキテクチャ",
+        "description": "\n はじめに\n最近、趣味でElectronを使ったアプリを開発しています。その過程で、アーキテクチャ設計についていくつか悩んだポイントがありました。本記事では、実際に採用したアーキテクチャや解決策を紹介します。\n今回はサーバーにデータを置かないローカルファーストなデスクトップアプリを作っているということもあり、特に以下の点で悩みました。\n\nフレームワークどうする？\nWebのようなREST APIが使えない\nデータベースどうしよう\nアプリのアップデートどうしよう\nアプリのコード署名むずい\n\n\n フレームワークどうする\nまずはじめにフレームワークをどうするかという問題がありました。\n最初はN...",
+        "link": "https://zenn.dev/progate/articles/building-electron-app",
+        "guid": {
+          "#text": "https://zenn.dev/progate/articles/building-electron-app",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Fri, 07 Mar 2025 00:13:05 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--FlUqA9qo--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E5%2583%2595%25E3%2581%25AEElectron%25E3%2582%25A2%25E3%2583%2597%25E3%2583%25AA%25E3%2582%25A2%25E3%2583%25BC%25E3%2582%25AD%25E3%2583%2586%25E3%2582%25AF%25E3%2583%2581%25E3%2583%25A3%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:Godai%2520Hori%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2UzOTZjNjhlM2MuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:Progate%2520Tech%2520Blog%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzU2MzlkZTY4MGYuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Godai Hori"
+      },
+      {
+        "title": "JetBrains IDEとClaude Codeを連携させて擬似Clineにする",
+        "description": "ClineはVSCode拡張なので、IntelliJやWebStormなどのJetBrains製品のエディタには対応していません。\nJetBrains版のエージェントとも言えるJunieの登場も控えていますが、他のユーザーのレビューによると他ツールと同じ開発体験を実現するのは難しそうでしたClaude 3.7 Sonnetをモデルに指定して使うことは出来なさそうでした。コーディングタスク能力にかなり差があるのでClaudeを使いたいところです。[1]\nそこでCLI（TUI）ベースのコーディングエージェントのClaude Codeの出番です。\nhttps://docs.anthropic....",
+        "link": "https://zenn.dev/laiso/articles/def184d432438b",
+        "guid": {
+          "#text": "https://zenn.dev/laiso/articles/def184d432438b",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 17:15:15 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--lTWbQpvL--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:JetBrains%2520IDE%25E3%2581%25A8Claude%2520Code%25E3%2582%2592%25E9%2580%25A3%25E6%2590%25BA%25E3%2581%2595%25E3%2581%259B%25E3%2581%25A6%25E6%2593%25AC%25E4%25BC%25BCCline%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:laiso%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzM4Nzc0MDcyMDcuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "laiso"
+      },
+      {
+        "title": "ハッカソンに出たはずが長期チーム開発をしてる話",
+        "description": "\n こんにちは\n先日、2/26 ~ 2/28の3日間で「PR TIMES HACKATHON 2025 WINTER」に参加させていただきました。 僕自身、人生初ハッカソン&amp;チーム開発でしたがかなり濃い経験を得ることができました。今回、タイトルにある通りハッカソンレポートにするつもりでしたが、なぜか今でも開発が続いてるので....\nこのようなタイトルにさせて頂きました！\nそれではよろしくお願いします。\n\n PR TIMES HACKTHON　とは\nPR TIMESさんが毎年夏、冬で実施する3日間のハッカソンです。チームを3,4人程度で組んで、与えられたお題に合わせて成果物を作って...",
+        "link": "https://zenn.dev/cercil/articles/e11a7488891f59",
+        "guid": {
+          "#text": "https://zenn.dev/cercil/articles/e11a7488891f59",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 13:06:50 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--czwwzGFh--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%258F%25E3%2583%2583%25E3%2582%25AB%25E3%2582%25BD%25E3%2583%25B3%25E3%2581%25AB%25E5%2587%25BA%25E3%2581%259F%25E3%2581%25AF%25E3%2581%259A%25E3%2581%258C%25E9%2595%25B7%25E6%259C%259F%25E3%2583%2581%25E3%2583%25BC%25E3%2583%25A0%25E9%2596%258B%25E7%2599%25BA%25E3%2582%2592%25E3%2581%2597%25E3%2581%25A6%25E3%2582%258B%25E8%25A9%25B1%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%2591%25E3%2581%2584%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSXo0d1JnUnlFazhnYzllc1RlLUhfLXBxd1g3V3VOSUZTbHVpTXpsdU54MHVod2tET3o9czk2LWM=%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "けい"
+      },
+      {
+        "title": "Cline の Plan Mode を使って手戻りを防ごう！",
+        "description": "\n TL;DR\n\n\nPlan Modeを活用しよう: Plan Mode を使って要件を固めて手戻りを防ぐ\n\nCline はタスクランナー: Cline は自然言語スクリプトを実行するタスクランナーとして捉えると分かりやすい。Plan Mode は dry-run の役割\n\n\n はじめに\nここ最近話題になっている Cline ですが、触れた方の中には「これはパラダイムが変わる」と感じた人も多いのではないでしょうか。\n私も2024年11月中頃に初めて Cline を使い、その新しい体験と馬力の高さに驚きました。\nしかし、いざ Cline を使ってみると、Cline に実装を任せても意図通り...",
+        "link": "https://zenn.dev/heavenosk/articles/cline-plan-mode",
+        "guid": {
+          "#text": "https://zenn.dev/heavenosk/articles/cline-plan-mode",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 11:07:19 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--RTQsoOtX--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Cline%2520%25E3%2581%25AE%2520Plan%2520Mode%2520%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%25A3%25E3%2581%25A6%25E6%2589%258B%25E6%2588%25BB%25E3%2582%258A%25E3%2582%2592%25E9%2598%25B2%25E3%2581%2594%25E3%2581%2586%25EF%25BC%2581%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%25B8%25E3%2581%25B6%25E3%2582%2593%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2hoMWZIZ0JrazVrQ3N2c2dQYS10azVkMG0yTk02ZHBDM3BBWXdKPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "へぶん"
+      },
+      {
+        "title": "次世代クロスプラットフォームフレームワーク「Lynx」 ファーストインプレッション",
+        "description": "こんにちは！テラーノベルでiOS/Android/Webとフロントエンド周りを担当している @kazutoyoです！\nByteDanceが、モバイル/Web向けのクロスプラットフォームの新たなフレームワーク、「Lynx」を公開しました。\nhttps://lynxjs.org/blog/lynx-unlock-native-for-more.html\n普段iOS/AndroidのネイティブやReact Native、Next.jsなどで開発している筆者が、Lynxを触ってみた感想を書いてみます。\n\n Lynxのファーストインプレッション\n\n 良い部分\n\n1つのコードでiOS/Android...",
+        "link": "https://zenn.dev/tellernovel_inc/articles/3c2bece10afb3f",
+        "guid": {
+          "#text": "https://zenn.dev/tellernovel_inc/articles/3c2bece10afb3f",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 10:25:58 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--2XApd--m--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E6%25AC%25A1%25E4%25B8%2596%25E4%25BB%25A3%25E3%2582%25AF%25E3%2583%25AD%25E3%2582%25B9%25E3%2583%2597%25E3%2583%25A9%25E3%2583%2583%25E3%2583%2588%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0%25E3%2583%2595%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%25A0%25E3%2583%25AF%25E3%2583%25BC%25E3%2582%25AF%25E3%2580%258CLynx%25E3%2580%258D%2520%25E3%2583%2595%25E3%2582%25A1%25E3%2583%25BC%25E3%2582%25B9%25E3%2583%2588%25E3%2582%25A4%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:kazutoyo%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2Y2ZDBjOWE0YTEuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E3%2583%2586%25E3%2583%25A9%25E3%2583%25BC%25E3%2583%258E%25E3%2583%2599%25E3%2583%25AB%2520%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzQ0OTFkZTE3MjUuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "kazutoyo"
+      },
+      {
+        "title": "”開発チームと監視の心理的距離”を近くするためのSentryとLogging運用例",
+        "description": "マナリンクCTOの名人です。\n今回は、SentryとLoggingの工夫により、「開発チームとエラー監視の心理的距離を近くする」ことをテーマに記事を書きます。\n\n 背景\nエラー監視、嫌ですよね。\n手塩にかけて育てたソースコードが本番環境でエラーを吐いている様子は、誰が見ても気持ちいいものではありません。\nそんなエラー監視から目を逸らさず、普段の開発から意識して関わっていくことが、サービスの安定した運用や障害対応のスピードに繋がります。\n弊社では昨年1年ほどかけて、コツコツとSentryとの関わり方や、日頃どんな基準でどんな形式でどこにLoggingするか、およびSentryとLoggin...",
+        "link": "https://zenn.dev/manalink_dev/articles/sentry-team-integration",
+        "guid": {
+          "#text": "https://zenn.dev/manalink_dev/articles/sentry-team-integration",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Thu, 06 Mar 2025 10:00:23 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--LK4pFCAk--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E2%2580%259D%25E9%2596%258B%25E7%2599%25BA%25E3%2583%2581%25E3%2583%25BC%25E3%2583%25A0%25E3%2581%25A8%25E7%259B%25A3%25E8%25A6%2596%25E3%2581%25AE%25E5%25BF%2583%25E7%2590%2586%25E7%259A%2584%25E8%25B7%259D%25E9%259B%25A2%25E2%2580%259D%25E3%2582%2592%25E8%25BF%2591%25E3%2581%258F%25E3%2581%2599%25E3%2582%258B%25E3%2581%259F%25E3%2582%2581%25E3%2581%25AESentry%25E3%2581%25A8Logging%25E9%2581%258B%25E7%2594%25A8%25E4%25BE%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:meijin%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2FmZjliMGZlZjIuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E3%2583%259E%25E3%2583%258A%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%2520Tech%2520Blog%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2pPWmtyWk1nS3djRXl5a2w1X2lVTFZFVmtVVUpkNzkzcjlfejhERjRzPXMyNTAtYw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "meijin"
+      },
+      {
+        "title": "Dockerイメージの安全性を高める10のセキュリティハック",
+        "description": "\n はじめに\n本記事は、Snykの『10 Docker Image Security Best Practices』という記事を参考にし、学習の一環としてまとめたものです。\n記事の内容をより分かりやすく整理し、個人的な考察や追加情報も加えています。\n読者の皆様の学習の一助となれば幸いです。\nhttps://snyk.io/jp/blog/10-docker-image-security-best-practices/\n\n Dockerのセキュリティとは\nSnykの記事では、Dockerのセキュリティとは、Dockerコンテナのビルド、ランタイム、オーケストレーションに関する側面として説明...",
+        "link": "https://zenn.dev/fuuji/articles/3909c8d444eaa9",
+        "guid": {
+          "#text": "https://zenn.dev/fuuji/articles/3909c8d444eaa9",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Wed, 05 Mar 2025 14:35:00 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--YlWSyChk--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Docker%25E3%2582%25A4%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%25AE%2589%25E5%2585%25A8%25E6%2580%25A7%25E3%2582%2592%25E9%25AB%2598%25E3%2582%2581%25E3%2582%258B10%25E3%2581%25AE%25E3%2582%25BB%25E3%2582%25AD%25E3%2583%25A5%25E3%2583%25AA%25E3%2583%2586%25E3%2582%25A3%25E3%2583%258F%25E3%2583%2583%25E3%2582%25AF%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Fuji%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRhYTQ2NzZjNDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Fuji"
+      },
+      {
+        "title": "GitHub Copilotがプルリクを勝手にレビューしてくれる設定を広めたい",
+        "description": "\n はじめに\n最近GitHubでプルリクのレビューアーにCopilotくんをアサインすると、AIがレビューしてくれるようになりました。\n\nアサインしてしばらく待つとレビューを付けてくれます。\n\n今回はCopilotくんの指摘はなかったようです。\nさて、この機能は非常に便利なのですが、毎回アサインするの面倒くさいですしプルリクを出す人によってはアサインしなかったり忘れたりするのはイマイチなので、勝手にアサインして毎回レビューしてもらう設定にしちゃいましょう。という記事です。\nGitHub Copilotは定額なのでなるべく使いまくったほうが得ですよね！\n\n 結論を簡単に書くと\nルールセット...",
+        "link": "https://zenn.dev/ncdc/articles/7807f5b6e3ee88",
+        "guid": {
+          "#text": "https://zenn.dev/ncdc/articles/7807f5b6e3ee88",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Wed, 05 Mar 2025 10:30:18 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--EOtRq-z1--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:GitHub%2520Copilot%25E3%2581%258C%25E3%2583%2597%25E3%2583%25AB%25E3%2583%25AA%25E3%2582%25AF%25E3%2582%2592%25E5%258B%259D%25E6%2589%258B%25E3%2581%25AB%25E3%2583%25AC%25E3%2583%2593%25E3%2583%25A5%25E3%2583%25BC%25E3%2581%2597%25E3%2581%25A6%25E3%2581%258F%25E3%2582%258C%25E3%2582%258B%25E8%25A8%25AD%25E5%25AE%259A%25E3%2582%2592%25E5%25BA%2583%25E3%2582%2581%25E3%2581%259F%25E3%2581%2584%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:%25E3%2581%2584%25E3%2581%25B0%25E3%2582%2589%25E3%2581%258D%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzNhODZhNDA5ZDMuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/g_south_west%2Ch_34%2Cl_default:og-publication-pro-mark-xcosax%2Cw_34%2Cx_217%2Cy_158/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:NCDC%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B8%25E3%2583%258B%25E3%2582%25A2%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_255%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2lXRjZXeUJCMTBrRDZNaV9Fa0tLQi13WFJSUC04eFlJbDV5eWljPXM5Ni1j%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "いばらき"
+      },
+      {
+        "title": "Claude Codeで感じたAIとソフトウェア開発の未来",
+        "description": "先週、2月24日[1]にClaude Codeのresearch preview版がリリースされました。↓の動画では、Claude Codeによる次のような作業の様子が紹介されており、エキサイティングです。\n\nリポジトリの内容を理解して説明させる\n追加機能を要求して実装させる\nビルドおよびテストが通るまで試行錯誤させる\n\nhttps://www.youtube.com/watch?v=AJpK3YTTKZ4\n週末に時間が取れたので、早速Claude Codeを触ってみました。その結果、\n\nソフトウェア開発の方法が大きく変わりそう\nAIエージェントを前提に自分が変わらなければならない\n\nと...",
+        "link": "https://zenn.dev/koher/articles/claude-code-and-development-future",
+        "guid": {
+          "#text": "https://zenn.dev/koher/articles/claude-code-and-development-future",
+          "@_isPermaLink": "true"
+        },
+        "pubDate": "Wed, 05 Mar 2025 03:26:30 GMT",
+        "enclosure": {
+          "@_url": "https://res.cloudinary.com/zenn/image/upload/s--mheChJ3U--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%25E3%2581%25A7%25E6%2584%259F%25E3%2581%2598%25E3%2581%259FAI%25E3%2581%25A8%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2582%25A6%25E3%2582%25A7%25E3%2582%25A2%25E9%2596%258B%25E7%2599%25BA%25E3%2581%25AE%25E6%259C%25AA%25E6%259D%25A5%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Yuta%2520Koshizawa%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzZkMjYwYmRkNzguanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+          "@_length": "0",
+          "@_type": "image/png"
+        },
+        "dc:creator": "Yuta Koshizawa"
+      }
+    ]
+  }
+}

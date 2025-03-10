@@ -4,7 +4,8 @@ import type { Feed } from "src/server/feeds";
 
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { type RSSItem, RSSParser } from "src/lib/rss";
+import { RSSParser } from "src/lib/rss";
+import type { RSS } from "src/lib/rss";
 
 const client = hc<AppType>("/api");
 
@@ -149,7 +150,7 @@ const DeleteFeed = () => {
 };
 
 const ShowRSSFeed = () => {
-	const [rssItems, setRssItems] = useState<RSSItem[]>([]);
+	const [rss, setRSS] = useState<RSS>();
 
 	const parser = new RSSParser();
 
@@ -161,7 +162,7 @@ const ShowRSSFeed = () => {
 			const res = await fetch(`/cors-proxy?${query}`);
 			const xml = await res.text();
 			const feed = parser.parse(xml);
-			setRssItems(feed.channel.items);
+			setRSS(feed);
 		} catch (error) {
 			console.error("Failed to fetch RSS feed", error);
 		}
@@ -181,7 +182,7 @@ const ShowRSSFeed = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{rssItems.map((item, index) => (
+					{rss?.channel.items.map((item, index) => (
 						<tr key={item.title + index.toString()}>
 							<td>{item.title}</td>
 							<td>

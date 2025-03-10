@@ -1,66 +1,110 @@
-export interface RSSItem {
+import { XMLParser } from "fast-xml-parser";
+
+// All date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year may be expressed with two characters or four characters (four preferred).
+// Ex. Sat, 07 Sep 2002 00:00:01 GMT
+
+export interface RSS {
+	version: "2.0";
+	/** https://www.rssboard.org/rss-specification#aboutThisDocument */
+	channel: Channel;
+}
+
+interface Channel {
 	title: string;
 	link: string;
+	description: string;
+	items: Item[];
+
+	language?: string;
+	copyright?: string;
+	managingEditor?: string;
+	webMaster?: string;
 	pubDate?: string;
-	description?: string;
+	lastBuildDate?: string;
+	category?: Category;
+	generator?: string;
+	docs?: string;
+	// biome-ignore lint/suspicious/noExplicitAny: cloud is not used in practice
+	cloud?: any;
+	ttl?: number; // (minutes)
+	image?: Image;
+	rating?: string;
+	// biome-ignore lint/suspicious/noExplicitAny: textInput is not used in practice
+	textInput?: any;
+	skipHours?: number[];
+	skipDays?: string[];
 }
 
-export interface RSSChannel {
+interface Item {
+	/** All elements of an item are optional, however at least one of title or description must be present. */
+	title?: string;
+	link?: string;
+	description?: string;
+	author?: string;
+	category?: string[];
+	comments?: string;
+	enclosure?: Enclosure;
+	guid?: Guid;
+	pubDate?: string;
+	source?: Source;
+}
+
+interface Category {
+	"#text": string;
+	"@_domain"?: string;
+}
+
+interface Image {
+	url: string;
 	title: string;
 	link: string;
+	width?: number;
+	height?: number;
 	description?: string;
-	items: RSSItem[];
 }
 
-export interface RSSFeed {
-	version: string;
-	channel: RSSChannel;
+interface Enclosure {
+	"@_url": string;
+	"@_length": number;
+	"@_type": string;
+}
+
+interface Source {
+	"#text": string;
+	"@_url": string;
+}
+
+interface Guid {
+	"#text": string;
+	"@_isPermaLink"?: boolean;
 }
 
 export class RSSParser {
-	parse(xml: string): RSSFeed {
-		const parser = new DOMParser();
-		const doc = parser.parseFromString(xml, "application/xml");
+	private parser: XMLParser;
 
-		if (doc.querySelector("parsererror")) {
-			throw new Error("Invalid XML format");
+	constructor() {
+		this.parser = new XMLParser({ ignoreAttributes: false });
+	}
+
+	parse(xml: string): RSS {
+		const result = this.parser.parse(xml);
+
+		if (!result.rss || !result.rss.channel) {
+			throw new Error("Invalid RSS XML format");
 		}
 
-		const rssElement = doc.querySelector("rss");
-		if (!rssElement) {
-			throw new Error("Invalid RSS feed");
-		}
-
-		const version = rssElement.getAttribute("version");
-		if (!version || version !== "2.0") {
+		if (result.rss["@_version"] !== "2.0") {
 			throw new Error("Unsupported RSS version");
 		}
 
-		const channelElement = rssElement.querySelector("channel");
-		if (!channelElement) {
-			throw new Error("Missing <channel> element in RSS feed");
-		}
+		const channel: Channel = result.rss.channel;
+		channel.items = Array.isArray(result.rss.channel.item || [])
+			? result.rss.channel.item || []
+			: [result.rss.channel.item];
 
 		return {
-			version: rssElement.getAttribute("version") || "2.0",
-			channel: {
-				title: this.getText(channelElement, "title"),
-				link: this.getText(channelElement, "link"),
-				description: this.getText(channelElement, "description"),
-				items: Array.from(channelElement.querySelectorAll("item")).map(
-					(item) => ({
-						title: this.getText(item, "title"),
-						link: this.getText(item, "link"),
-						pubDate: this.getText(item, "pubDate"),
-						description: this.getText(item, "description"),
-					}),
-				),
-			},
+			version: "2.0",
+			channel,
 		};
-	}
-
-	private getText(element: Element, tagName: string): string {
-		const tag = element.querySelector(tagName);
-		return tag?.textContent?.trim() || "";
 	}
 }
