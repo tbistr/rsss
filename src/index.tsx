@@ -29,7 +29,7 @@ app
 						{import.meta.env.PROD ? (
 							<script type="module" src="/static/client.js" />
 						) : (
-							<script type="module" src="/src/client/client.tsx" />
+							<script type="module" src="/src/client/App.tsx" />
 						)}
 					</head>
 					<body>

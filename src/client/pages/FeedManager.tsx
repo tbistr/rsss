@@ -1,38 +1,24 @@
 import "@mantine/core/styles.css";
 
-import { MantineProvider } from "@mantine/core";
+import {} from "@mantine/core";
 import { hc } from "hono/client";
 import { useState } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router";
-import Parser from "rss-parser";
+import {} from "react-router";
 import type { AppType } from "src/server";
 import type { Feed } from "src/server/feeds";
 
 const client = hc<AppType>("/api");
 
-function App() {
+export const FeedManager = () => {
 	return (
 		<>
-			<h1>Feed App</h1>
-
-			<h2>Create Feed</h2>
-			<CreateFeed />
-
-			<h2>Show Feeds</h2>
 			<ShowFeeds />
-
-			<h2>Show Feed</h2>
+			<CreateFeed />
 			<ShowFeed />
-
-			<h2>Delete Feed</h2>
 			<DeleteFeed />
-
-			<h2>Zenn RSS Feed</h2>
-			<ShowRSSFeed />
 		</>
 	);
-}
+};
 
 const CreateFeed = () => {
 	const [title, setTitle] = useState("");
@@ -150,69 +136,3 @@ const DeleteFeed = () => {
 		</form>
 	);
 };
-
-const ShowRSSFeed = () => {
-	type Item = {
-		title?: string;
-		link?: string;
-		pubDate?: string;
-	};
-	const [rssItems, setRssItems] = useState<Item[]>([]);
-
-	const parser = new Parser();
-
-	const handle = async () => {
-		try {
-			const query = new URLSearchParams({
-				url: "https://zenn.dev/feed",
-			});
-			const res = await fetch(`/cors-proxy?${query}`);
-			const xml = await res.text();
-			const feed = await parser.parseString(xml);
-			setRssItems(feed.items);
-		} catch (error) {
-			console.error("Failed to fetch RSS feed", error);
-		}
-	};
-
-	return (
-		<div>
-			<button type="button" onClick={handle}>
-				Do
-			</button>
-			<table border={1}>
-				<thead>
-					<tr>
-						<th>Title</th>
-						<th>Link</th>
-						<th>Published</th>
-					</tr>
-				</thead>
-				<tbody>
-					{rssItems.map((item, index) => (
-						<tr key={item.title + index.toString()}>
-							<td>{item.title}</td>
-							<td>
-								<a href={item.link} target="_blank" rel="noopener noreferrer">
-									Read More
-								</a>
-							</td>
-							<td>{item.pubDate}</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
-		</div>
-	);
-};
-
-const root = createRoot(document.getElementById("root") ?? document.body);
-root.render(
-	<MantineProvider>
-		<BrowserRouter>
-			<Routes>
-				<Route index element={<App />} />
-			</Routes>
-		</BrowserRouter>
-	</MantineProvider>,
-);
