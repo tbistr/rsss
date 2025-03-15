@@ -13,6 +13,8 @@
 	},
 	"dependencies": {
 		"@hono/zod-validator": "^0.4.3",
+		"@mantine/core": "^7.17.2",
+		"@mantine/hooks": "^7.17.2",
 		"drizzle-orm": "^0.40.0",
 		"events": "^3.3.0",
 		"hono": "^4.7.2",
@@ -29,6 +31,9 @@
 		"@types/react": "^19.0.10",
 		"@types/react-dom": "^19.0.4",
 		"drizzle-kit": "^0.30.5",
+		"postcss": "^8.5.3",
+		"postcss-preset-mantine": "^1.17.0",
+		"postcss-simple-vars": "^7.0.1",
 		"vite": "^6.2.0",
 		"vite-tsconfig-paths": "^5.1.4",
 		"wrangler": "^3.109.2"

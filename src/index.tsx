@@ -26,10 +26,6 @@ app
 							content="width=device-width, initial-scale=1"
 							name="viewport"
 						/>
-						<link
-							rel="stylesheet"
-							href="https://cdn.simplecss.org/simple.min.css"
-						/>
 						{import.meta.env.PROD ? (
 							<script type="module" src="/static/client.js" />
 						) : (

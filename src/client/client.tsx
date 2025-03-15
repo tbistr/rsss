@@ -1,11 +1,13 @@
-import { hc } from "hono/client";
-import { BrowserRouter, Route, Routes } from "react-router";
-import type { AppType } from "src/server";
-import type { Feed } from "src/server/feeds";
+import "@mantine/core/styles.css";
 
+import { MantineProvider } from "@mantine/core";
+import { hc } from "hono/client";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router";
 import Parser from "rss-parser";
+import type { AppType } from "src/server";
+import type { Feed } from "src/server/feeds";
 
 const client = hc<AppType>("/api");
 
@@ -206,9 +208,11 @@ const ShowRSSFeed = () => {
 
 const root = createRoot(document.getElementById("root") ?? document.body);
 root.render(
-	<BrowserRouter>
-		<Routes>
-			<Route index element={<App />} />
-		</Routes>
-	</BrowserRouter>,
+	<MantineProvider>
+		<BrowserRouter>
+			<Routes>
+				<Route index element={<App />} />
+			</Routes>
+		</BrowserRouter>
+	</MantineProvider>,
 );

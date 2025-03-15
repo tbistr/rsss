@@ -1,3 +1,8 @@
 {
-	"recommendations": ["biomejs.biome", "yoavbls.pretty-ts-errors"]
+	"recommendations": [
+		"biomejs.biome",
+		"yoavbls.pretty-ts-errors",
+		"vunguyentuan.vscode-postcss",
+		"vunguyentuan.vscode-css-variables"
+	]
 }
