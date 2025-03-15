@@ -1,4 +1,5 @@
 import { hc } from "hono/client";
+import { BrowserRouter, Route, Routes } from "react-router";
 import type { AppType } from "src/server";
 import type { Feed } from "src/server/feeds";
 
@@ -199,4 +200,10 @@ const ShowRSSFeed = () => {
 };
 
 const root = createRoot(document.getElementById("root") ?? document.body);
-root.render(<App />);
+root.render(
+	<BrowserRouter>
+		<Routes>
+			<Route index element={<App />} />
+		</Routes>
+	</BrowserRouter>,
+);
