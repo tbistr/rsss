@@ -11,7 +11,7 @@ import type React from "react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Parser from "rss-parser";
 
-import classes from "./test.module.css";
+import classes from "./articleCard.module.css";
 
 type Item = {
 	title?: string;
