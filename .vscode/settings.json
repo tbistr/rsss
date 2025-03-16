@@ -7,7 +7,8 @@
 		"editor.tabSize": 2,
 		"editor.codeActionsOnSave": {
 			"quickfix.biome": "explicit",
-			"source.organizeImports.biome": "explicit"
+			"source.organizeImports.biome": "explicit",
+			"source.fixAll.biome": "explicit"
 		}
 	},
 	"cssVariables.lookupFiles": [
