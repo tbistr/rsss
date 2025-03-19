@@ -1,6 +1,6 @@
 import "@mantine/core/styles.css";
 
-import {} from "@mantine/core";
+import { Button, TextInput } from "@mantine/core";
 import { hc } from "hono/client";
 import { useState } from "react";
 import {} from "react-router";
@@ -37,23 +37,19 @@ const CreateFeed = () => {
 				).url;
 			}}
 		>
-			<label>
-				Title:
-				<input
-					type="text"
-					value={title}
-					onChange={(e) => setTitle(e.target.value)}
-				/>
-			</label>
-			<label>
-				Feed URL:
-				<input
-					type="text"
-					value={url}
-					onChange={(e) => setUrl(e.target.value)}
-				/>
-			</label>
-			<button type="submit">Create</button>
+			<TextInput
+				label="Title"
+				type="text"
+				value={title}
+				onChange={(e) => setTitle(e.target.value)}
+			/>
+			<TextInput
+				label="Feed URL"
+				type="text"
+				value={url}
+				onChange={(e) => setUrl(e.target.value)}
+			/>
+			<Button type="submit">Create</Button>
 		</form>
 	);
 };
@@ -70,9 +66,9 @@ const ShowFeeds = () => {
 	};
 	return (
 		<>
-			<button type="button" onClick={onClick}>
+			<Button type="button" onClick={onClick}>
 				Show Feed IDs
-			</button>
+			</Button>
 			<ul>
 				{Feed.map((n) => (
 					<li key={n.id}>{JSON.stringify(n)}</li>
@@ -99,15 +95,13 @@ const ShowFeed = () => {
 				setFeed(await res.json());
 			}}
 		>
-			<label>
-				ID:
-				<input
-					type="number"
-					value={id}
-					onChange={(e) => setId(e.target.value)}
-				/>
-			</label>
-			<button type="submit">Show</button>
+			<TextInput
+				label="ID"
+				type="number"
+				value={id}
+				onChange={(e) => setId(e.target.value)}
+			/>
+			<Button type="submit">Show</Button>
 			{Feed && <pre>{JSON.stringify(Feed, null, 2)}</pre>}
 		</form>
 	);
@@ -124,15 +118,13 @@ const DeleteFeed = () => {
 				});
 			}}
 		>
-			<label>
-				ID:
-				<input
-					type="number"
-					value={id}
-					onChange={(e) => setId(e.target.value)}
-				/>
-			</label>
-			<button type="submit">Delete</button>
+			<TextInput
+				label="ID"
+				type="number"
+				value={id}
+				onChange={(e) => setId(e.target.value)}
+			/>
+			<Button type="submit">Delete</Button>
 		</form>
 	);
 };
