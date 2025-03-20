@@ -3,11 +3,11 @@ import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import { IconBrandMantine } from "@tabler/icons-react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import { Layout } from "./components/AppShell";
-import { ShowRSSFeeds } from "./pages/ArticleViewer";
-import { FeedManager } from "./pages/FeedManager";
-import { NotFound } from "./pages/NotFound";
+import { ShowRSSFeeds } from "./pages/feeds/ArticleViewer";
+import { FeedManager } from "./pages/manage/FeedManager";
+import { NotFound } from "./pages/notFound/NotFound";
 
 const root = createRoot(document.getElementById("root") ?? document.body);
 root.render(
@@ -20,22 +20,22 @@ root.render(
 							links={[
 								{
 									icon: IconBrandMantine,
-									label: "New Articles",
-									to: "/articles",
+									label: "View Feeds",
+									to: "/feeds",
 								},
 								{
 									icon: IconBrandMantine,
 									label: "Manage Feeds",
-									to: "/feeds",
+									to: "/manage",
 								},
 							]}
 						/>
 					}
 				>
-					<Route index element={<NotFound />} />
-					<Route path="/articles" element={<ShowRSSFeeds />} />
-					<Route path="/feeds" element={<FeedManager />} />
-					<Route path="/*" element={<NotFound />} />
+					<Route index element={<Navigate to="/feeds" replace />} />
+					<Route path="/feeds" element={<ShowRSSFeeds />} />
+					<Route path="/manage" element={<FeedManager />} />
+					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
