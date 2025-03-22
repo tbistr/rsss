@@ -9,7 +9,7 @@ import type { Feed } from "src/server/feeds";
 
 const client = hc<AppType>("/api");
 
-export const FeedManager = () => {
+export const FeedSubscriptions = () => {
 	return (
 		<>
 			<ShowFeeds />
