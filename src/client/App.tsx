@@ -5,9 +5,9 @@ import { IconBrandMantine } from "@tabler/icons-react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import { Layout } from "./components/AppShell";
+import { NotFound } from "./pages/NotFound";
 import { ShowRSSFeeds } from "./pages/feeds/my/ArticleViewer";
 import { FeedSubscriptions } from "./pages/feeds/subscriptions/FeedSubscriptions";
-import { NotFound } from "./pages/notFound/NotFound";
 
 const root = createRoot(document.getElementById("root") ?? document.body);
 root.render(
