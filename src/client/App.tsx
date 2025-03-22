@@ -5,8 +5,8 @@ import { IconBrandMantine } from "@tabler/icons-react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import { Layout } from "./components/AppShell";
-import { FeedManager } from "./pages/feeds/management/FeedManager";
 import { ShowRSSFeeds } from "./pages/feeds/my/ArticleViewer";
+import { FeedSubscriptions } from "./pages/feeds/subscriptions/FeedSubscriptions";
 import { NotFound } from "./pages/notFound/NotFound";
 
 const root = createRoot(document.getElementById("root") ?? document.body);
@@ -28,7 +28,7 @@ root.render(
 								{
 									icon: IconBrandMantine,
 									label: "Manage Feeds",
-									to: "/feeds/management",
+									to: "/feeds/subscriptions",
 								},
 							]}
 						/>
@@ -36,7 +36,7 @@ root.render(
 				>
 					<Route index element={<ShowRSSFeeds />} />
 					<Route path="my" element={<ShowRSSFeeds />} />
-					<Route path="management" element={<FeedManager />} />
+					<Route path="subscriptions" element={<FeedSubscriptions />} />
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
