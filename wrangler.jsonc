@@ -3,7 +3,11 @@
 	"name": "rsss",
 	"main": "src/index.tsx",
 	"compatibility_date": "2025-02-27",
-	"assets": { "directory": "./dist" },
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"not_found_handling": "single-page-application"
+	},
 	"d1_databases": [
 		{
 			"binding": "DB",
