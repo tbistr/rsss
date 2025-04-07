@@ -9,7 +9,8 @@
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
 		"paths": {
-			"src/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"~/*": ["./public/*"]
 		}
 	}
 }

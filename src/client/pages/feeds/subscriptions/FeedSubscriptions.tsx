@@ -1,21 +1,31 @@
-import "@mantine/core/styles.css";
-
+import type { AppType } from "@/server";
+import type { Feed } from "@/server/feeds";
 import { Button, TextInput } from "@mantine/core";
 import { hc } from "hono/client";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {} from "react-router";
-import type { AppType } from "src/server";
-import type { Feed } from "src/server/feeds";
+import { SubscriptionTable } from "./SubscriptionTable";
 
 const client = hc<AppType>("/api");
 
 export const FeedSubscriptions = () => {
+	const [feeds, setFeeds] = useState<Feed[]>([]);
+
+	const fetchFeeds = useCallback(async () => {
+		const res = await client.feeds.$get();
+		if (!res.ok) {
+			return;
+		}
+		const feeds = await res.json();
+		setFeeds(feeds);
+	}, []);
+
+	useEffect(() => {
+		fetchFeeds();
+	}, [fetchFeeds]);
 	return (
 		<>
-			<ShowFeeds />
-			<CreateFeed />
-			<ShowFeed />
-			<DeleteFeed />
+			<SubscriptionTable feeds={feeds} />
 		</>
 	);
 };

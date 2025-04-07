@@ -1,8 +1,8 @@
+import { feeds } from "@/db/schema";
 import { zValidator } from "@hono/zod-validator";
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/d1";
 import { Hono } from "hono";
-import { feeds } from "src/db/schema";
 import { z } from "zod";
 
 export interface Feed {
@@ -16,7 +16,6 @@ const app = new Hono<{ Bindings: { DB: D1Database } }>()
 	.get("/", async (c) => {
 		const db = drizzle(c.env.DB);
 		const found = await db.select().from(feeds).all();
-		console.log(found);
 		if (found.length === 0) {
 			return c.json({ error: "Not Found" }, 404);
 		}

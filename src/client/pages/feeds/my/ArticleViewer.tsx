@@ -29,7 +29,7 @@ export const ShowRSSFeeds = () => {
 		setRssItems([]);
 		try {
 			const query = new URLSearchParams({ url: "https://zenn.dev/feed" });
-			const res = await fetch(`/cors-proxy?${query}`);
+			const res = await fetch(`/api/cors-proxy?${query}`);
 			const xml = await res.text();
 			const feed = await parser.parseString(xml);
 			const items = feed.items.map((item) => ({
