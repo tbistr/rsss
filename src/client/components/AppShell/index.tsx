@@ -26,7 +26,9 @@ export const Layout = ({ links }: { links: NavbarLinkProps[] }) => {
 				))}
 			</AppShell.Navbar>
 
-			<AppShell.Main>
+			<AppShell.Main
+				style={{ height: "100%", display: "flex", flexDirection: "column" }}
+			>
 				<Outlet />
 			</AppShell.Main>
 		</AppShell>

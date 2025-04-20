@@ -5,7 +5,7 @@ import { MantineProvider } from "@mantine/core";
 import { IconBrandMantine } from "@tabler/icons-react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Layout } from "./components/AppShell/AppShell";
+import { Layout } from "./components/AppShell";
 import { NotFound } from "./pages/NotFound";
 import { FeedSubscriptions } from "./pages/feeds/feeds/FeedSubscriptions";
 import { Articles } from "./pages/feeds/index/Articles";

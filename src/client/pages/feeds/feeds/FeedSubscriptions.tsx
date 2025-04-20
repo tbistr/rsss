@@ -1,33 +1,25 @@
+import { FullscreenLoader } from "@/client/components/Loading";
+import { useFeeds } from "@/client/hooks/api";
 import type { AppType } from "@/server";
 import type { Feed } from "@/server/feeds";
 import { Button, TextInput } from "@mantine/core";
 import { hc } from "hono/client";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import {} from "react-router";
 import { SubscriptionTable } from "./SubscriptionTable";
 
 const client = hc<AppType>("/api");
 
 export const FeedSubscriptions = () => {
-	const [feeds, setFeeds] = useState<Feed[]>([]);
+	const { data, isLoading, error } = useFeeds({});
+	if (error) {
+		return <div>Error: {error.message}</div>;
+	}
+	if (isLoading || !data) {
+		return <FullscreenLoader />;
+	}
 
-	const fetchFeeds = useCallback(async () => {
-		const res = await client.feeds.$get();
-		if (!res.ok) {
-			return;
-		}
-		const feeds = await res.json();
-		setFeeds(feeds);
-	}, []);
-
-	useEffect(() => {
-		fetchFeeds();
-	}, [fetchFeeds]);
-	return (
-		<>
-			<SubscriptionTable feeds={feeds} />
-		</>
-	);
+	return <SubscriptionTable feeds={data} />;
 };
 
 const CreateFeed = () => {

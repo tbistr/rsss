@@ -25,7 +25,8 @@
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"react-router": "^7.3.0",
-		"rss-parser": "^3.13.0"
+		"rss-parser": "^3.13.0",
+		"swr": "^2.3.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",

@@ -1,43 +1,26 @@
 import {
-	type ArticleCardItem,
 	ArticleCards,
 	ArticleCardsSkelton,
-} from "@/client/components/ArticleCard/ArticleCard";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import Parser from "rss-parser";
+} from "@/client/components/ArticleCard";
+import { useCorsProxy } from "@/client/hooks/api";
 
 export const Articles = () => {
-	const [rssItems, setRssItems] = useState<ArticleCardItem[]>([]);
+	const { data, isLoading, error } = useCorsProxy("https://zenn.dev/feed");
 
-	const parser = useMemo(() => new Parser(), []);
+	if (error) {
+		return <div>Error: {error.message}</div>;
+	}
 
-	const fetch_rss = useCallback(async () => {
-		setRssItems([]);
-		try {
-			const query = new URLSearchParams({ url: "https://zenn.dev/feed" });
-			const res = await fetch(`/api/cors-proxy?${query}`);
-			const xml = await res.text();
-			const feed = await parser.parseString(xml);
-			const items = feed.items.map((item) => ({
-				title: item.title,
-				link: item.link,
-				thumbnail: item.enclosure?.url,
-				pubDate: item.pubDate,
-			}));
+	if (isLoading || !data) {
+		return <ArticleCardsSkelton count={12} />;
+	}
 
-			setRssItems(items);
-		} catch (error) {
-			console.error("Failed to fetch RSS feed", error);
-		}
-	}, [parser]);
+	const items = data.items.map((item) => ({
+		title: item.title,
+		link: item.link,
+		thumbnail: item.enclosure?.url,
+		pubDate: item.pubDate,
+	}));
 
-	useEffect(() => {
-		fetch_rss();
-	}, [fetch_rss]);
-
-	return rssItems.length === 0 ? (
-		<ArticleCardsSkelton count={12} />
-	) : (
-		<ArticleCards articles={rssItems} />
-	);
+	return <ArticleCards articles={items} />;
 };
