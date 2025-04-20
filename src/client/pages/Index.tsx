@@ -1,8 +1,8 @@
+import { useCorsProxy } from "@/client/api";
 import {
 	ArticleCards,
 	ArticleCardsSkelton,
 } from "@/client/components/ArticleCard";
-import { useCorsProxy } from "@/client/hooks/api";
 
 export const Articles = () => {
 	const { data, isLoading, error } = useCorsProxy("https://zenn.dev/feed");

@@ -15,10 +15,6 @@ const app = new Hono<{ Bindings: { DB: D1Database } }>()
 	// すべてのフィードを取得
 	.get("/", async (c) => {
 		const db = drizzle(c.env.DB);
-		const found = await db.select().from(feeds).all();
-		if (found.length === 0) {
-			return c.json({ error: "Not Found" }, 404);
-		}
 		return c.json<Feed[]>(await db.select().from(feeds).all(), 200);
 	})
 	// idを指定して特定のフィードを取得
