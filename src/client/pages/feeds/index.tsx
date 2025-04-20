@@ -1,8 +1,7 @@
 import { api } from "@/client/api";
 import { mutateFeeds, useFeeds } from "@/client/api/feeds";
 import { CreateFeedForm } from "@/client/components/CreateFeedForm";
-import { FeedTable } from "@/client/components/FeedTable";
-import { FullscreenLoader } from "@/client/components/Loader";
+import { FeedTable, FeedTableSkeleton } from "@/client/components/FeedTable";
 import type { AppType } from "@/server";
 import type { Feed } from "@/server/feeds";
 import { Button, Card, Flex, Modal, Title } from "@mantine/core";
@@ -18,9 +17,6 @@ export const FeedSubscriptions = () => {
 
 	if (error) {
 		return <div>Error: {error.message}</div>;
-	}
-	if (isLoading || !data) {
-		return <FullscreenLoader />;
 	}
 
 	const createFeed = async (title: string, url: string) => {
@@ -55,7 +51,11 @@ export const FeedSubscriptions = () => {
 					<Title order={3}>登録フィード一覧</Title>
 					<Button onClick={openForm}>＋ 新規作成</Button>
 				</Flex>
-				<FeedTable feeds={data} onDelete={onDelete} />
+				{isLoading || !data ? (
+					<FeedTableSkeleton />
+				) : (
+					<FeedTable feeds={data} onDelete={onDelete} />
+				)}
 			</Card>
 		</>
 	);
