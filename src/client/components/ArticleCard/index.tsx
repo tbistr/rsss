@@ -15,7 +15,8 @@ export const ArticleCard = ({ article }: { article: ArticleCardItem }) => (
 		p="md"
 		radius="md"
 		component="a"
-		href="#"
+		href={article.link}
+		target="_blank"
 		className={classes.card}
 	>
 		<AspectRatio ratio={1920 / 1080}>
